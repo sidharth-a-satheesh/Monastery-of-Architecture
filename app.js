@@ -12,6 +12,9 @@ app.get("/", function (req, res) {
 app.get("/projects", function (req, res) {
     res.render("projects");
 });
+app.get("/project-landing", function (req, res) {
+  res.render("project-landing");
+});
 app.get("/media", function (req, res) {
     res.render("media");
 });
@@ -23,6 +26,9 @@ app.get("/blog", function (req, res) {
 });
 app.get("/blog-landing", function (req, res) {
   res.render("blog-landing");
+});
+app.get("/contact", function (req, res) {
+  res.render("contact");
 });
   
 //route for magic page

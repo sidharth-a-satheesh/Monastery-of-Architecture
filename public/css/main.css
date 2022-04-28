@@ -322,3 +322,27 @@ hr{
     display: flex;
     align-items: center;
 }
+.blog-landing-main{
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+    margin-top: 5%;
+}
+.blog-landing-img{
+    display: grid;
+    grid-template-columns: 95%;
+    justify-content: center;
+}
+.blog-landing-img img{
+    width: 100%;
+    border-radius: 23px;
+}
+.blog-landing-main a{
+    margin-top: 50%;
+    text-decoration: underline; 
+    color: #505050; 
+}
+.back-to-blogs{
+    display: grid;
+    justify-content: center;
+}
