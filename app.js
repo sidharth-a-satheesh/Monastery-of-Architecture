@@ -21,6 +21,9 @@ app.get("/about", function (req, res) {
 app.get("/blog", function (req, res) {
   res.render("blog");
 });
+app.get("/blog-landing", function (req, res) {
+  res.render("blog-landing");
+});
   
 //route for magic page
 // app.get("/magic", function (req, res) {
