@@ -282,3 +282,43 @@ hr{
     display: flex;
     align-items: center;
 }
+.blog{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 3%;
+    grid-row-gap: 5%;
+    margin-bottom: 4%;
+    color: #505050;
+}
+.blog-mainbg{
+    display: grid;
+    grid-template-columns: 94%;
+    justify-content: center;
+}
+.blog img{
+    width: 100%;
+    border-radius: 23px;
+}
+.blog button{
+    border-color: #505050;
+    padding: 10px 50px;
+    border-radius: 5px;
+    color: #505050;
+    border-width: 3px;
+    font-weight: lighter;
+    font-size: large;
+}
+.blog-heading{
+    font-weight: normal;
+    font-size: 220%;
+    line-height: .9;
+}
+.blog-date{
+    font-size: 50%;
+    font-weight: lighter;
+}
+.blog-para{
+    font-size: 190%;
+    display: flex;
+    align-items: center;
+}
