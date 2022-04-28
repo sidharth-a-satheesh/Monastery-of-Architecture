@@ -12,6 +12,9 @@ app.get("/", function (req, res) {
 app.get("/projects", function (req, res) {
     res.render("projects");
   });
+  app.get("/media", function (req, res) {
+    res.render("media");
+  });
 //route for magic page
 // app.get("/magic", function (req, res) {
 //   res.render("magic");
