@@ -6,6 +6,7 @@ body{
 #header{
     position: fixed;
     background-color: white;
+    
     width: 100%;
     z-index: 9999;
 }
@@ -256,4 +257,28 @@ hr{
     font-weight: normal;
     color: #505050;
     font-size: 180%;
+}
+
+.about{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 4%;
+    justify-content: center;
+
+}
+.about img{
+    border-radius: 23px;
+    width: 60%;
+}
+.about p{
+    text-align: right;
+    font-size: 170%;
+}
+.about-img{
+    
+}
+.about-para{
+    padding-left: 23%;
+    display: flex;
+    align-items: center;
 }

@@ -11,10 +11,17 @@ app.get("/", function (req, res) {
 });
 app.get("/projects", function (req, res) {
     res.render("projects");
-  });
-  app.get("/media", function (req, res) {
+});
+app.get("/media", function (req, res) {
     res.render("media");
-  });
+});
+app.get("/about", function (req, res) {
+  res.render("about");
+});
+app.get("/blog", function (req, res) {
+  res.render("blog");
+});
+  
 //route for magic page
 // app.get("/magic", function (req, res) {
 //   res.render("magic");
