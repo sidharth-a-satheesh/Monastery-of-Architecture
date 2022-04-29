@@ -6,6 +6,7 @@ body{
 #header{
     position: fixed;
     background-color: white;
+    
     width: 100%;
     z-index: 9999;
 }
@@ -256,4 +257,135 @@ hr{
     font-weight: normal;
     color: #505050;
     font-size: 180%;
+}
+
+.about{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 4%;
+    justify-content: center;
+
+}
+.about img{
+    border-radius: 23px;
+    width: 60%;
+}
+.about p{
+    text-align: right;
+    font-size: 170%;
+}
+.about-img{
+    
+}
+.about-para{
+    padding-left: 23%;
+    display: flex;
+    align-items: center;
+}
+.blog{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 3%;
+    grid-row-gap: 5%;
+    margin-bottom: 4%;
+    color: #505050;
+}
+.blog-mainbg{
+    display: grid;
+    grid-template-columns: 94%;
+    justify-content: center;
+}
+.blog img{
+    width: 100%;
+    border-radius: 23px;
+}
+.blog button{
+    border-color: #505050;
+    padding: 10px 50px;
+    border-radius: 5px;
+    color: #505050;
+    border-width: 3px;
+    font-weight: lighter;
+    font-size: large;
+}
+.blog-heading{
+    font-weight: normal;
+    font-size: 220%;
+    line-height: .9;
+}
+.blog-date{
+    font-size: 50%;
+    font-weight: lighter;
+}
+.blog-para{
+    font-size: 190%;
+    display: flex;
+    align-items: center;
+}
+.blog-landing-main{
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+    margin-top: 5%;
+}
+.blog-landing-img{
+    display: grid;
+    grid-template-columns: 95%;
+    justify-content: center;
+}
+.blog-landing-img img{
+    width: 100%;
+    border-radius: 23px;
+}
+.blog-landing-main a{
+    margin-top: 50%;
+    text-decoration: underline; 
+    color: #505050; 
+}
+.back-to-blogs{
+    display: grid;
+    justify-content: center;
+}
+.contact-main{
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+}
+.contact-main iframe{
+    width: 100%;
+}
+.contact{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: left;
+    grid-column-gap: 10%;
+}
+.contact button{
+    border-color: #b5b3b3;
+    padding: 5px 50px;
+    border-radius: 5px;
+    color: #b5b3b3;
+    border-width: 3px;
+    font-weight: lighter;
+    font-size: large;
+}
+.contact input{
+    width: 100%;
+    border-radius: 5px;
+    border: #b5b3b3 solid 3px;
+    color: #b5b3b3;
+    margin-bottom: 3%;
+    font-size: 120%;
+    padding: 5px;
+    padding-left: 15px;
+    outline: none;
+}
+.contact-para{
+    font-size: 150%;
+}
+
+.contact-header{
+    font-weight: normal;
+    font-size: 220%;
+    margin-top: 5%;
 }

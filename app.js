@@ -11,10 +11,26 @@ app.get("/", function (req, res) {
 });
 app.get("/projects", function (req, res) {
     res.render("projects");
-  });
-  app.get("/media", function (req, res) {
+});
+app.get("/project-landing", function (req, res) {
+  res.render("project-landing");
+});
+app.get("/media", function (req, res) {
     res.render("media");
-  });
+});
+app.get("/about", function (req, res) {
+  res.render("about");
+});
+app.get("/blog", function (req, res) {
+  res.render("blog");
+});
+app.get("/blog-landing", function (req, res) {
+  res.render("blog-landing");
+});
+app.get("/contact", function (req, res) {
+  res.render("contact");
+});
+  
 //route for magic page
 // app.get("/magic", function (req, res) {
 //   res.render("magic");
