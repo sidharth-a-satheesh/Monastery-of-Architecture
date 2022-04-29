@@ -5,8 +5,7 @@ body{
 }
 #header{
     position: fixed;
-    background-color: white;
-    
+    background-color: rgba(255, 255, 255, 0.5);;
     width: 100%;
     z-index: 9999;
 }
@@ -16,6 +15,7 @@ body{
 }
 .logo{
     height: 110px;
+    padding: 5%;
 }
 .anchor{
     display: flex;
