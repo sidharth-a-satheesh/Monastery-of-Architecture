@@ -182,16 +182,26 @@ button{
     grid-template-columns: 95%;
     justify-content: center;
 }
-hr{
-    margin-bottom: 25px;
-}
-/* #footer-div{
+
+.back-to-top{
     display: grid;
-    grid-template-columns: 15% 80%;
+    justify-content: center;
 }
-#copyright{
+.back-to-top img{
+    height: 20px;
+}
+.back-to-top button{
+    border: none;
     width: fit-content;
-} */
+}
+.back-to-top button:hover{
+    border: none;
+    outline: none;
+}
+.back-to-top button:focus{
+    border: none;
+    outline: none;
+}
 
 #footer-div {
     display: grid;
@@ -254,9 +264,9 @@ hr{
 }
 
 .media-temp p{
-    font-weight: normal;
+    font-weight: 200;
     color: #505050;
-    font-size: 180%;
+    font-size: 140%;
 }
 
 .about{
