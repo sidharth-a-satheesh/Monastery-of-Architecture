@@ -399,3 +399,15 @@ button{
     font-size: 220%;
     margin-top: 5%;
 }
+
+.proj-main{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-content: center;
+    grid-row-gap: 10%;
+}
+.proj-main img{
+    border-radius: 23px;
+    width: fit-content;
+}
