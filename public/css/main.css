@@ -208,6 +208,7 @@ button{
     grid-template-columns: repeat(2, auto);
     justify-content: space-between;
     margin-bottom: 1%;
+    margin-top: 2%;
 }
 
 #logo-div {
@@ -260,13 +261,14 @@ button{
 
 }
 .media-logo img{
-    width: 50%;
+    width: 30%;
+    padding: 3% 0;
 }
 
 .media-temp p{
-    font-weight: 200;
+    font-weight: 300;
     color: #505050;
-    font-size: 140%;
+    font-size: 150%;
 }
 
 .about{
@@ -282,7 +284,8 @@ button{
 }
 .about p{
     text-align: right;
-    font-size: 170%;
+    font-size: 145%;
+    line-height: normal;
 }
 .about-img{
     
@@ -307,32 +310,35 @@ button{
 }
 .blog img{
     width: 100%;
-    border-radius: 23px;
+    border-radius: 20px;
 }
 .blog button{
     border-color: #505050;
-    padding: 10px 50px;
+    padding: 5px 40px;
     border-radius: 5px;
     color: #505050;
-    border-width: 3px;
+    border-width: 2px;
     font-weight: lighter;
-    font-size: large;
+    font-size: medium;
 }
 .blog-heading{
     font-weight: normal;
-    font-size: 220%;
+    font-size: 180%;
     line-height: .9;
+    padding-top: 1%;
 }
 .blog-date{
-    font-size: 50%;
+    font-size: 55%;
+    padding-top: 20%;
     font-weight: lighter;
 }
 .blog-para{
-    font-size: 190%;
+    font-size: 150%;
     display: flex;
     align-items: center;
 }
 .blog-landing-main{
+    color: #505050;
     display: grid;
     grid-template-columns: 90%;
     justify-content: center;
@@ -405,9 +411,49 @@ button{
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     justify-content: center;
-    grid-row-gap: 10%;
+    grid-column-gap: 5%;
 }
 .proj-main img{
-    border-radius: 23px;
-    width: fit-content;
+    border-radius: 20px;
+    width: 100%;
+
+}
+.proj{
+    display: grid;
+    grid-template-columns: 92%;
+    align-items: center;
+    justify-content: center;
+    color: #505050;
+}
+
+.proj-imgtitle{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    line-height: normal;
+}
+.proj-t1{
+    text-align: left;
+    font-size: x-large;
+}
+.proj-t2{
+    text-align: right;
+    font-size: x-large;
+}
+.proj-t2 p{
+    font-weight: 400;
+}
+.proj-t1 p{
+    font-weight: 700;
+}
+
+.proj-types{
+    display: flex;
+    margin-bottom: 3%;
+}
+.proj-types a{
+    color: #505050;
+    margin-right: 5%;
 }

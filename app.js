@@ -15,6 +15,9 @@ app.get("/projects", function (req, res) {
 app.get("/project-landing", function (req, res) {
   res.render("project-landing");
 });
+app.get("/project-landing", function (req, res) {
+  res.render("project-landing");
+});
 app.get("/media", function (req, res) {
     res.render("media");
 });
