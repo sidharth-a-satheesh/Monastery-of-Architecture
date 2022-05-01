@@ -375,37 +375,58 @@ button{
     grid-template-columns: repeat(2,1fr);
     justify-content: left;
     grid-column-gap: 10%;
+    color: #505050;
 }
 .contact button{
-    border-color: #b5b3b3;
+    border-color: #969696;
     padding: 5px 50px;
     border-radius: 5px;
-    color: #b5b3b3;
-    border-width: 3px;
+    color: #505050;
+    border-width: 2px;
     font-weight: lighter;
-    font-size: large;
+    font-size: medium;
 }
 .contact input{
     width: 100%;
     border-radius: 5px;
-    border: #b5b3b3 solid 3px;
-    color: #b5b3b3;
+    border: #969696 solid 2px;
+    color: #505050;
     margin-bottom: 3%;
-    font-size: 120%;
+    font-size: 100%;
     padding: 5px;
     padding-left: 15px;
     outline: none;
 }
 .contact-para{
-    font-size: 150%;
+    font-size: 140%;
+    line-height: normal;
 }
 
 .contact-header{
     font-weight: normal;
-    font-size: 220%;
+    font-size: 180%;
     margin-top: 5%;
 }
-
+.contact textarea{
+    width: 100%;
+    border-radius: 5px;
+    border: #969696 solid 2px;
+    color: #505050;
+    margin-bottom: 3%;
+    font-size: 100%;
+    padding: 5px;
+    padding-left: 15px;
+    outline: none;
+    resize: none;
+}
+.contact input::placeholder{
+    color: #c8c5c5;
+    font-weight: lighter;
+}
+.contact textarea::placeholder{
+    color: #c8c5c5;
+    font-weight: lighter;
+}
 .proj-main{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -456,4 +477,30 @@ button{
 .proj-types a{
     color: #505050;
     margin-right: 5%;
+}
+
+
+
+
+
+@media only screen and (max-width: 376px) {
+    .contact{
+        grid-template-columns: 100%;
+    }
+    .contact-header{
+        font-size: 130%;
+    }
+    .contact-para{
+        font-size: 100%;
+    }
+    .contact button{
+        font-size: smaller;
+        padding: 2px 20px;
+    }
+    .contact textarea{
+        font-size: 80%;
+    }
+    .contact input{
+        font-size: 80%;
+    }
 }
