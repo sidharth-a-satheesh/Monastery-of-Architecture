@@ -42,7 +42,7 @@ body{
     width: 100%;
 }
 #section-2{
-    margin-top: 75px;
+    margin-top: 5%;
     display: grid;
     grid-template-columns: 95%;
     justify-content: center;
@@ -53,10 +53,11 @@ body{
     border-radius: 23px;
 }
 #section2-2{
-    margin-top: 75px;
+    margin-top: 5%;
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-bottom: 51px;
+    margin-bottom: 5%;
+    grid-column-gap: 4%;
 }
 #img-3{
     width: 100%;
@@ -68,10 +69,10 @@ body{
 #section2-2-1{
     display: grid;
     grid-template-rows: 50% 50%;
-    margin-left: 10%;
+    
 }
 #img-4{
-    width: 100%;
+    width: 91%;
     border-radius: 23px;
     margin-top: 0;
 }
@@ -79,13 +80,14 @@ p{
     font-weight: lighter;
 }
 #para-1{
-    font-size: 180%;
+    font-size: 1.8rem;
     padding-top: 0;
     margin-top: 0;
+    width: 91%;
 }
 #para-2{
     font-size: 190%;
-    margin-bottom: 51px;
+    margin-bottom: 3%;
     margin-top: 0;
 }
 #img-5{
@@ -93,7 +95,7 @@ p{
     border-radius: 23px;
 }
 #div-img-5{
-    margin-bottom: 51px;
+    margin-bottom: 3%;
 }
 #section2-3,#pl-section2-3{
     display: grid;
@@ -120,7 +122,7 @@ p{
 #img-9{
     width: 100%;
     border-radius: 23px;
-    margin-top: 51px;
+    margin-top: 5%;
 }
 #img-9:hover,#img-8:hover,#img-7:hover,#img-6:hover,#img-5:hover,#img-4:hover,#img-3:hover,#img-2:hover{
     /* filter: blur(4px); */
@@ -551,6 +553,12 @@ button{
 }
 
 
+
+
+
+
+
+
 @media only screen and (max-width: 900px) {
     .contact{
         grid-template-columns: 100%;
@@ -719,5 +727,48 @@ button{
     }
     .img-br{
         display: none;
+    }
+
+    #section2-2{
+        grid-template-columns: 100%;
+    }
+
+    #section2-2-1{
+        margin-left: 0;
+        grid-template-rows: 30% 70%;
+    }
+    #para-1{
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    #para-2{
+        font-size: 1rem;
+    }
+    #para-1-div{
+        height: fit-content;
+    }
+    #img-4{
+        width: 100%;
+    }
+    #section2-3, #pl-section2-3{
+        grid-template-columns: 100%;
+        grid-row-gap: 2%;
+    }
+    #section2-3-1, #pl-section2-3-1{
+        grid-template-rows: 64% 44%;
+        grid-row-gap: 3.5%;
+    }
+    #img-6{
+        width: 100%;
+    }
+    #img-9{
+        margin-top: 18%;
+    }
+    .media-img-temp{
+        margin-bottom: 35%;
+    }
+    #section2-0{
+        grid-template-columns: 100%;
     }
 }
