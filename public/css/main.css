@@ -160,6 +160,9 @@ body{
 #section2-4{
     margin-top: 5%;
 }
+.pl-section2-4 img{
+    margin-top: 5%;
+}
 #img-9:hover,#img-8:hover,#img-7:hover,#img-6:hover,#img-5:hover,#img-4:hover,#img-3:hover,#img-2:hover{
     /* filter: blur(4px); */
     z-index: 0;
