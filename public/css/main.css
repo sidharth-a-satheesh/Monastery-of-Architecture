@@ -90,7 +90,7 @@ body{
 #section2-2{
     margin-top: 5%;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50% 46%;
     margin-bottom: 5%;
     grid-column-gap: 4%;
 }
@@ -107,7 +107,7 @@ body{
     
 }
 #img-4{
-    width: 91%;
+    width: 100%;
     border-radius: 23px;
     margin-top: 0;
 }
@@ -156,6 +156,8 @@ body{
 #img-9{
     width: 100%;
     border-radius: 23px;
+}
+#section2-4{
     margin-top: 5%;
 }
 #img-9:hover,#img-8:hover,#img-7:hover,#img-6:hover,#img-5:hover,#img-4:hover,#img-3:hover,#img-2:hover{
@@ -174,6 +176,9 @@ button{
 }
 .home-page button{
     width: 10rem;
+}
+.home-page button:hover{
+    cursor: pointer;
 }
 #hidden-9{
     position: absolute;
@@ -207,7 +212,7 @@ button{
 }
 #hidden-4{
     position: absolute;
-    bottom: 20px;
+    bottom: 12px;
     left: 20px;
     display: none;
 }
