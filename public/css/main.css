@@ -44,16 +44,18 @@ body{
 }
 .img-home-hover font{
     font-weight: bold; 
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: white;
     line-height: normal;
 }
 
+
 .img-home-hover:hover{
     cursor:default
+
 }
 .navbar-nav{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 350;
     padding-right: 2.5rem;
 }
@@ -75,7 +77,26 @@ body{
 .navbar{
     padding-left: 0.5rem !important;
 }
-
+.navbar button:focus{
+    outline: none;
+}
+#toggle-img-2{
+    display: none;
+    width: 3rem;
+}
+#toggle-img-1{
+    width: 3rem;
+}
+#nav-img-1{
+    height: 100px;
+}
+#nav-img-2{
+    display: none;
+    height: 80px;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: #505050 !important;
+}
 .img-1{
     width: 100%;
 }
@@ -116,14 +137,14 @@ body{
     margin-top: 0;
 }
 #para-1{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: lighter;
     padding-top: 0;
     margin-top: 0;
     width: 91%;
 }
 #para-2{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: lighter;
     margin-bottom: 3%;
     margin-top: 0;
@@ -186,7 +207,10 @@ button{
 }
 .home-page button:hover{
     cursor: pointer;
+    color: #280095;
+    border-color: #280095;
 }
+
 #hidden-9{
     position: absolute;
     bottom: 20px;
@@ -337,7 +361,7 @@ button{
 .media-temp p{
     font-weight: 300;
     color: #505050;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .media-date{
@@ -358,7 +382,7 @@ button{
 }
 .about p{
     text-align: right;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
     line-height: normal;
 }
@@ -395,6 +419,11 @@ button{
     font-size: 1.05rem;
     font-weight: 300;
 }
+.blog button:hover{
+    cursor: pointer;
+    color: #280095;
+    border-color: #280095;
+}
 .blog-heading{
     font-weight: normal;
     font-size: 1.8rem;
@@ -407,7 +436,7 @@ button{
     font-weight: 300;
 }
 .blog-para{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
     display: flex;
     align-items: center;
@@ -479,7 +508,7 @@ button{
     outline: none;
 }
 .contact-para{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
     line-height: normal;
 }
@@ -552,17 +581,17 @@ button{
 }
 .proj-t2 p{
     font-weight: 400;
-    font-weight: 1.5rem;
+    font-weight: 1.3rem;
 }
 .proj-t1 p{
     font-weight: 700;
-    font-weight: 1.5rem;
+    font-weight: 1.3rem;
 }
 
 .proj-types{
     display: flex;
     margin-bottom: 3%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
 }
 .proj-types a{
@@ -577,7 +606,7 @@ button{
     margin-bottom: 51px;
 }
 .p-landingp p{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
     line-height: normal;
 }
@@ -586,7 +615,7 @@ button{
     font-weight: 400;
 }
 .p-date-loc{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
 }
 #pl-section2-3{
@@ -631,6 +660,24 @@ button{
 
 
 @media only screen and (max-width: 900px) {
+    
+    .navbar-nav{
+        height: 700px;
+        
+    }
+    #nav-img-1{
+        height: 80px;
+    }
+    
+    .img-1 {
+        object-fit: cover;
+        height: 600px;
+    }
+
+    .navbar-light .navbar-nav .nav-link{
+        color: white !important;
+    }
+
     .contact{
         grid-template-columns: 100%;
     }

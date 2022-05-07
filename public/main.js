@@ -4,6 +4,32 @@ function topFunction() {
 }
 
 
+var flag = 1;
+const nav = document.getElementById('navbar');
+const navimg1 = document.getElementById('nav-img-1');
+const navimg2 = document.getElementById('nav-img-2');
+const toggleimg1 = document.getElementById('toggle-img-1');
+const toggleimg2 = document.getElementById('toggle-img-2');
+
+function navbarclr(){
+    if (flag==1){
+        flag = 0;
+        nav.style.background = "#280095";
+        toggleimg1.style.display = "none";
+        toggleimg2.style.display = "block";
+        navimg1.style.display = "none";
+        navimg2.style.display = "block";
+    }else if(flag==0){
+        flag = 1;
+        nav.style.background = "white"
+        toggleimg1.style.display = "block";
+        toggleimg2.style.display = "none";
+        navimg1.style.display = "block";
+        navimg2.style.display = "none";
+    }
+    
+}
+
 const img2 = document.getElementById('img-2');
 const el2 = document.getElementById('section2-1');
 const hiddenDiv2 = document.getElementById('hidden-2');
