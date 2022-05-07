@@ -48,6 +48,10 @@ body{
     color: white;
     line-height: normal;
 }
+
+.img-home-hover:hover{
+    cursor:default
+}
 .navbar-nav{
     font-size: 1.5rem;
     font-weight: 350;
