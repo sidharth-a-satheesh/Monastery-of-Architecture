@@ -37,7 +37,17 @@ body{
     text-decoration: underline;
     cursor: default;
 } */
-
+.img-home-hover{
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 300;
+}
+.img-home-hover font{
+    font-weight: bold; 
+    font-size: 1.5rem;
+    color: white;
+    line-height: normal;
+}
 .navbar-nav{
     font-size: 1.5rem;
     font-weight: 350;
@@ -72,6 +82,7 @@ body{
     justify-content: center;
     margin-bottom: 3%;
 }
+
 #img-2{
     width: 100%;
     border-radius: 23px;
@@ -158,9 +169,11 @@ button{
     border-color: white;
     border-radius: 5px !important;
     padding: 2%;
+    font-size: 1.05rem;
+    font-weight: 300;
 }
 .home-page button{
-    width: 130%;
+    width: 10rem;
 }
 #hidden-9{
     position: absolute;
