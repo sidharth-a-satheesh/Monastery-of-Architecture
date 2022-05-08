@@ -138,4 +138,3 @@ el9.addEventListener('mouseout', function handleMouseOut() {
     hiddenDiv9.style.display = 'none';
     img9.style["-webkit-filter"] = "blur(0px) brightness(100%)";
 });
-

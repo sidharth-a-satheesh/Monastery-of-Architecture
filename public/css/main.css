@@ -68,6 +68,10 @@ body{
     text-decoration-color: #280095;
     text-decoration-thickness: 2px;
 }
+
+.navbar-nav a:active{
+    color:#280095;
+}
 .nav-img{
     padding: 0.7rem;
 }
@@ -96,6 +100,9 @@ body{
 }
 .navbar-nav{
     color: #505050 !important;
+}
+.active{
+    color: #280095 !important;
 }
 .img-1{
     width: 100%;
@@ -691,6 +698,10 @@ button{
 
     .navbar-light .navbar-nav .nav-link{
         color: white !important;
+    }
+
+    .nav-link .nav-a .active{
+        color: #30E483 !important;
     }
 
     .contact{
