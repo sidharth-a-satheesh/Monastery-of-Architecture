@@ -852,15 +852,14 @@ button{
     #section2-2{
         grid-template-columns: 100%;
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
-
     #section2-2-1{
-        margin-left: 0;
-        grid-template-rows: 23% 71%;
+        grid-template-rows: auto;
         grid-row-gap: 1rem;
         margin-top: 1rem;
-
     }
+
     #para-1{
         width: 100%;
         font-size: 0.95rem;
@@ -889,11 +888,11 @@ button{
     }
     #section2-3, #pl-section2-3{
         grid-template-columns: 100%;
-        grid-template-rows: 51.7% 47%;
+        grid-template-rows: auto;
         grid-row-gap: 1rem;
     }
     #section2-3-1, #pl-section2-3-1{
-        grid-template-rows: 61.8% 34.5%;
+        grid-template-rows: auto;
         grid-row-gap: 1rem;
     }
     #section2-4{
