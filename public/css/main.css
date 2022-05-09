@@ -98,8 +98,8 @@ body{
     display: none;
     height: 80px;
 }
-.navbar-nav{
-    color: #505050 !important;
+.navbar-nav a{
+    color: #505050;
 }
 .active{
     color: #280095 !important;
@@ -696,11 +696,10 @@ button{
         height: 600px;
     }
 
-    .navbar-light .navbar-nav .nav-link{
-        color: white !important;
+    .navbar-nav a{
+        color: white;
     }
-
-    .nav-link .nav-a .active{
+    .active{
         color: #30E483 !important;
     }
 
@@ -716,13 +715,16 @@ button{
     .contact button{
         font-size: 0.7rem;
         padding: 2px 20px;
+        border-width: 1px;
     }
     .contact textarea{
         font-size: 0.7rem;
         padding-top: 0;
+        border-width: 1px;
     }
     .contact input{
         font-size: 0.7rem;
+        border-width: 1px;
     }
 
     .blog{
