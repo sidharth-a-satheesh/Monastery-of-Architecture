@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/public'));
 app.get("/", function (req, res) {
   res.render("index");
 });
+
 app.get("/projects", function (req, res) {
     res.render("projects");
 });
@@ -32,6 +33,37 @@ app.get("/blog-landing", function (req, res) {
 });
 app.get("/contact", function (req, res) {
   res.render("contact");
+});
+
+
+//route for admin page
+app.get("/admin", function (req, res) {
+  res.render("admin/a-index");
+});
+
+app.get("/admin/projects", function (req, res) {
+    res.render("admin/a-projects");
+});
+app.get("/admin/project-landing", function (req, res) {
+  res.render("admin/a-project-landing");
+});
+app.get("/admin/project-landing", function (req, res) {
+  res.render("admin/a-project-landing");
+});
+app.get("/admin/media", function (req, res) {
+    res.render("admin/a-media");
+});
+app.get("/admin/about", function (req, res) {
+  res.render("admin/a-about");
+});
+app.get("/admin/blog", function (req, res) {
+  res.render("admin/a-blog");
+});
+app.get("/admin/blog-landing", function (req, res) {
+  res.render("admin/a-blog-landing");
+});
+app.get("/admin/contact", function (req, res) {
+  res.render("admin/a-contact");
 });
   
 //route for magic page
