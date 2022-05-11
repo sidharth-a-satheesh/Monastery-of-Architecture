@@ -1009,3 +1009,22 @@ button{
     border-color: #6c757d;
     font-weight: 400
 }
+
+.messages-main{
+    display: grid;
+    grid-template-columns: 90%;
+}
+.msg{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-content: center;
+}
+.msg-temp p{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.msg-temp p font{
+    font-weight: 400;
+    font-size: 1rem;
+}

@@ -65,6 +65,10 @@ app.get("/admin/blog-landing", function (req, res) {
 app.get("/admin/contact", function (req, res) {
   res.render("admin/a-contact");
 });
+
+app.get("/admin/messages", function (req, res) {
+  res.render("admin/a-messages");
+});
   
 //route for magic page
 // app.get("/magic", function (req, res) {
