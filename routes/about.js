@@ -16,10 +16,10 @@ app.get("/images/:key", (req, res) => {
 });
 
 app.get("/about", async (req, res) => {
-  const about = await About.find({});
+  const about = await About.findOne({ id: 1 });
 
   try {
-    res.send(about);
+    res.render("about", { about });
   } catch (error) {
     res.status(500).send(error);
   }

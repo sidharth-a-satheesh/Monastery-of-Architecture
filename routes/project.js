@@ -31,9 +31,9 @@ app.get("/projects/:category", async (req, res) => {
   }
 });
 
-app.get("/projects/:category/:id", async (req, res) => {
-  const project = 
-});
+// app.get("/projects/:category/:id", async (req, res) => {
+//   const project = 
+// });
 
 app.post("/project-category", async (req, res) => {
   const projectCategory = new ProjectCategory(req.body);

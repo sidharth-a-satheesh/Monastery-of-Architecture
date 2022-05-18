@@ -2,8 +2,7 @@
 //   app = express();
 
 // //setting view engine to ejs
-// app.set("view engine", "ejs");
-// app.use(express.static(__dirname + '/public'));
+
 
 // //route for index page
 // app.get("/", function (req, res) {
@@ -83,6 +82,8 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + '/public'));
 const mongoose = require("mongoose");
 const cors = require("cors");
 app.use(cors());
