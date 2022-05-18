@@ -6,7 +6,7 @@ app.get("/messages", async (req, res) => {
   const messages = await Message.find({});
 
   try {
-    res.send(messages);
+    res.render("admin/a-messages", { messages });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -17,17 +17,17 @@ app.post("/messages", async (req, res) => {
 
   try {
     await message.save();
-    res.send(message);
+    res.redirect("/messages");
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-app.delete("/messages", async (req, res) => {
+app.post("/delete-message", async (req, res) => {
   const doc = await Message.deleteOne({ _id: req.body._id });
 
   try {
-    res.send(doc);
+    res.redirect("/messages");
   } catch (error) {
     res.status(500).send(error);
   }
