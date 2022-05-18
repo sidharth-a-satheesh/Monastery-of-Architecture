@@ -46,16 +46,16 @@ app.post("/about", upload.single("img"), async (req, res) => {
 });
 
 app.get("/edit-about", async (req, res) => {
-  const about = await About.find({});
+  const about = await About.findOne({ id: 1 });
 
   try {
-    res.send(about);
+    res.render("admin/a-about", { about });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-app.patch("/about", upload.single("img"), async (req, res) => {
+app.post("/edit-about", upload.single("img"), async (req, res) => {
   let reqBody;
   if (req.file) {
     const about = await About.findOne({ id: 1 });

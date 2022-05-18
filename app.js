@@ -52,9 +52,11 @@
 // app.get("/admin/media", function (req, res) {
 //     res.render("admin/a-media");
 // });
+
 // app.get("/admin/about", function (req, res) {
 //   res.render("admin/a-about");
 // });
+
 // app.get("/admin/blog", function (req, res) {
 //   res.render("admin/a-blog");
 // });
