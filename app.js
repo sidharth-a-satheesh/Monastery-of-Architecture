@@ -1,10 +1,4 @@
-// const express = require("express"),
-//   app = express();
 
-// //setting view engine to ejs
-
-
-// //route for index page
 // app.get("/", function (req, res) {
 //   res.render("index");
 // });
@@ -21,17 +15,11 @@
 // app.get("/media", function (req, res) {
 //     res.render("media");
 // });
-// app.get("/about", function (req, res) {
-//   res.render("about");
-// });
 // app.get("/blog", function (req, res) {
 //   res.render("blog");
 // });
 // app.get("/blog-landing", function (req, res) {
 //   res.render("blog-landing");
-// });
-// app.get("/contact", function (req, res) {
-//   res.render("contact");
 // });
 
 
@@ -53,9 +41,7 @@
 //     res.render("admin/a-media");
 // });
 
-// app.get("/admin/about", function (req, res) {
-//   res.render("admin/a-about");
-// });
+
 
 // app.get("/admin/blog", function (req, res) {
 //   res.render("admin/a-blog");
