@@ -13,7 +13,7 @@ app.get("/media", async (req, res) => {
   const media = await Media.find({});
 
   try {
-    res.send(media);
+    res.render("media", { media });
   } catch (error) {
     res.status(500).send(error);
   }
