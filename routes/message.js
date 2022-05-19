@@ -17,7 +17,7 @@ app.post("/messages", async (req, res) => {
 
   try {
     await message.save();
-    res.redirect("/messages");
+    res.redirect("/contact");
   } catch (error) {
     res.status(500).send(error);
   }
