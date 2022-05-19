@@ -10,13 +10,17 @@ const {
 } = require("../services/s3");
 
 app.get("/blogs", async (req, res) => {
-  const blog = await Blog.find({});
+  const blogs = await Blog.find({});
 
   try {
-    res.send(blog);
+    res.render("blog", { blogs });
   } catch (error) {
     res.status(500).send(error);
   }
+});
+
+app.get("/add-blog", async (req, res) => {
+  res.render("admin/a-blog-add");
 });
 
 app.post(
@@ -48,7 +52,7 @@ app.post(
 
     try {
       await blog.save();
-      res.send(blog);
+      res.redirect("/blogs");
     } catch (error) {
       res.status(500).send(error);
     }
@@ -56,10 +60,10 @@ app.post(
 );
 
 app.get("/edit-blog", async (req, res) => {
-  const blog = await Blog.find({});
+  const blogs = await Blog.find({});
 
   try {
-    res.send(blog);
+    res.render("admin/a-blog", { blogs });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -69,7 +73,7 @@ app.get("/edit-blog/:id", async (req, res) => {
   const blog = await Blog.findOne({ _id: req.params.id });
 
   try {
-    res.send(blog);
+    res.render("admin/a-blog-edit", { blog });
   } catch (error) {
     res.status(500).send(error);
   }
