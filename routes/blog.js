@@ -20,6 +20,16 @@ app.get("/blogs", async (req, res) => {
   }
 });
 
+app.get("/blogs/:id", async (req, res) => {
+  const blog = await Blog.findById(req.params.id);
+
+  try {
+    res.render("blog-landing", { blog });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 app.get("/add-blog", async (req, res) => {
   res.render("admin/a-blog-add");
 });
