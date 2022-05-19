@@ -72,7 +72,7 @@ app.post("/edit-about", upload.single("img"), async (req, res) => {
   });
 
   try {
-    res.render("about", { about: doc });
+    res.render("admin/a-about", { about: doc });
   } catch (error) {
     res.status(500).send(error);
   }
