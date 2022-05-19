@@ -39,7 +39,7 @@ app.post("/edit-contact", async (req, res) => {
   });
 
   try {
-    res.render("contact", { contact: doc });
+    res.render("admin/a-contact", { contact: doc });
   } catch (error) {
     res.status(500).send(error);
   }
