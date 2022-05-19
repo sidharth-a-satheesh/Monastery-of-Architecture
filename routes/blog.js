@@ -1,5 +1,6 @@
 const express = require("express");
 const Blog = require("../models/blog");
+const { toJsFormat } = require("../services/formatDate");
 const app = express();
 
 const {
@@ -52,7 +53,7 @@ app.post(
 
     try {
       await blog.save();
-      res.redirect("/blogs");
+      res.redirect("/edit-blog");
     } catch (error) {
       res.status(500).send(error);
     }
@@ -72,15 +73,17 @@ app.get("/edit-blog", async (req, res) => {
 app.get("/edit-blog/:id", async (req, res) => {
   const blog = await Blog.findOne({ _id: req.params.id });
 
+  let date = await toJsFormat(blog.date);
+
   try {
-    res.render("admin/a-blog-edit", { blog });
+    res.render("admin/a-blog-edit", { blog, date });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-app.patch(
-  "/blogs/:id",
+app.post(
+  "/edit-blog/:id",
   upload.fields([
     {
       name: "thumbnail",
@@ -113,18 +116,18 @@ app.patch(
     });
 
     try {
-      res.send(doc);
+      res.redirect("/edit-blog");
     } catch (error) {
       res.status(500).send(error);
     }
   }
 );
 
-app.delete("/blogs/:id", async (req, res) => {
+app.post("/delete-blog/:id", async (req, res) => {
   const doc = await Blog.deleteOne({ _id: req.params.id });
 
   try {
-    res.send(doc);
+    res.redirect("/edit-blog");
   } catch (error) {
     res.status(500).send(error);
   }

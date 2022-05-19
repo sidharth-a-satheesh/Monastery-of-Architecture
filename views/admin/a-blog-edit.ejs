@@ -30,39 +30,34 @@
 </div>
 </div>
 </header>
-<div class="blank" style="height: 129px;"></div>
-<div class="blog-mainbg">
-  <div class="add-button-div">
-    <a href="/add-blog"><button type="button" class="btn btn-secondary">ADD BLOG</button></a>
-  </div>
+<div class="container">
 
-  <% for (let index=0; index < blogs.length; index++) { %>
-  <% const blog=blogs[index]; %>
-  <div class="blog">
-    <div class="blog-img">
-      <img src="<%= blog.thumbnail %>" alt="">
+  <div class="blank" style="height: 129px;"></div>
+
+  <h2 class="mb-5">Edit Blog</h2>
+
+  <form action="/edit-blog/<%= blog._id %>" method="post" enctype="multipart/form-data">
+    <div>
+      <input name="title" type="text" value="<%= blog.title %>">
     </div>
     <div>
-      <p class="blog-heading">
-        <%= blog.title %> <br>
-        <font class="blog-date">
-          <%= blog.date %> <br>
-        </font>
-      </p>
-      <p class="blog-para">
-        <%= blog.content %>
-      </p>
-
-      <form action="/delete-blog/<%= blog._id %>" method="post">
-        <a href="/edit-blog/<%= blog._id %>">
-          <button class="edit-blog" type="button" class="btn btn-secondary">EDIT</button>
-        </a>
-        <a href=""><button type="submit" class="btn btn-secondary">DELETE</button></a>
-      </form>
-
+      <input type="date" name="date" class="mt-4" id="" cols="90" rows="1" value=<%= date %>>
     </div>
-  </div>
-  <% } %>
+    <div>
+      <textarea name="content" class="mt-4" id="" cols="150" rows="10"><%= blog.content %></textarea>
+    </div>
+    <div>
+      <label for="">Thumbnail: </label>
+      <input type="file" name="thumbnail">
+    </div>
+    <div>
+      <label for="">Image: </label>
+      <input type="file" name="img">
+    </div>
+    <div class=" text-left mt-4">
+      <a href=""><button type="submit" class="btn btn-secondary pl-5 pr-5">Submit</button></a>
+    </div>
+  </form>
 </div>
 
 <%- include ('partials/a-footer.ejs') %>
