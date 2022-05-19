@@ -48,8 +48,10 @@
       <font class="media-date"><%= item.date %></font>
     </p>
     <div class="add-button-div pr-5 pl-5">
-      <a href="/edit-media/:<%= item._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">EDIT</button></a>
-      <a href="/delete-media/:<%= item._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">DELETE</button></a>
+      <a href="/edit-media/<%= item._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">EDIT</button></a>
+      <form action="/delete-media/<%= item._id %>" method="post">
+        <button type="submit" class="btn btn-secondary pl-5 pr-5">DELETE</button>
+      </form>
     </div>
   </div>
   <% } %>

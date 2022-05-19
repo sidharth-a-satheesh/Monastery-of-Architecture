@@ -59,7 +59,7 @@ app.get("/edit-media", async (req, res) => {
   const media = await Media.find({});
 
   try {
-    res.send(media);
+    res.render("admin/a-media", { media });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -116,11 +116,11 @@ app.patch(
   }
 );
 
-app.delete("/media/:id", async (req, res) => {
+app.post("/delete-media/:id", async (req, res) => {
   const doc = await Media.deleteOne({ _id: req.params.id });
 
   try {
-    res.send(doc);
+    res.redirect("/edit-media");
   } catch (error) {
     res.status(500).send(error);
   }
