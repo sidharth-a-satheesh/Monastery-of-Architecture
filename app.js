@@ -1,4 +1,3 @@
-
 // app.get("/", function (req, res) {
 //   res.render("index");
 // });
@@ -10,12 +9,6 @@
 // });
 // app.get("/project-landing", function (req, res) {
 //   res.render("project-landing");
-// });
-// app.get("/media", function (req, res) {
-//     res.render("media");
-// });
-// app.get("/blog-landing", function (req, res) {
-//   res.render("blog-landing");
 // });
 // //route for admin page
 // app.get("/admin", function (req, res) {
@@ -30,20 +23,16 @@
 // app.get("/admin/media", function (req, res) {
 //     res.render("admin/a-media");
 // });
-// app.get("/admin/blog", function (req, res) {
-//   res.render("admin/a-blog");
-// });
 // //route for magic page
 // // app.get("/magic", function (req, res) {
 // //   res.render("magic");
 // // });
 
-
 require("dotenv").config();
 const express = require("express");
 const app = express();
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 const mongoose = require("mongoose");
 const cors = require("cors");
 app.use(cors());
@@ -98,10 +87,6 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
-});
-
-app.get("/admin/blog-landing", function (req, res) {
-  res.render("admin/a-blog-landing");
 });
 
 app.get("/admin/project-landing", function (req, res) {
