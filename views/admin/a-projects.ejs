@@ -32,13 +32,11 @@
 <div class="blank" style="height: 129px;"></div>
 <div class="proj">
     <div class="proj-types">
-        <a href="">All Projects</a>
-        <a href="">Residential</a>
-        <a href="">Commercial</a>
-        <a href="">Hospitality</a>
-        <a href="">Housing</a>
-        <a href="">Interiors</a>
-        <button type="button" class="btn btn-secondary contact-button">ADD CATEGORY</button>
+        <a href="/edit-project">All Projects</a>
+        <% for (let i = 0; i < projectCategories.length; i++) {%>
+        <a href="/edit-project/<%= projectCategories[i].name %>"><%= projectCategories[i].name %></a>
+        <% } %>
+        <a href="/edit-project-category"><button type="button" class="btn btn-secondary contact-button">EDIT CATEGORIES</button></a>
         
     </div>
     <div class="add-button-div pb-2">

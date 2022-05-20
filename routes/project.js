@@ -41,7 +41,7 @@ app.post("/project-category", async (req, res) => {
 
   try {
     await projectCategory.save();
-    res.send(projectCategory);
+    res.redirect("/edit-project");
   } catch (error) {
     res.status(500).send(error);
   }
@@ -154,7 +154,7 @@ app.get("/edit-project", async (req, res) => {
   const projectCategories = await ProjectCategory.find({});
 
   try {
-    res.send(projectCategories);
+    res.render("admin/a-projects", { projectCategories });
   } catch (error) {
     res.status(500).send(error);
   }
