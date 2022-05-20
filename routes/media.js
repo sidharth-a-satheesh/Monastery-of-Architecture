@@ -1,5 +1,6 @@
 const express = require("express");
 const Media = require("../models/media");
+const { toJsFormat } = require("../services/formatDate");
 const app = express();
 
 const {
@@ -17,6 +18,10 @@ app.get("/media", async (req, res) => {
   } catch (error) {
     res.status(500).send(error);
   }
+});
+
+app.get("/add-media", async (req, res) => {
+  res.render("admin/a-media-add");
 });
 
 app.post(
@@ -48,7 +53,7 @@ app.post(
 
     try {
       await media.save();
-      res.send(media);
+      res.redirect("/edit-media");
     } catch (error) {
       res.status(500).send(error);
     }
@@ -67,16 +72,17 @@ app.get("/edit-media", async (req, res) => {
 
 app.get("/edit-media/:id", async (req, res) => {
   const media = await Media.findOne({ _id: req.params.id });
+  let date = await toJsFormat(media.date);
 
   try {
-    res.send(media);
+    res.render("admin/a-media-edit", { media, date });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-app.patch(
-  "/media/:id",
+app.post(
+  "/edit-media/:id",
   upload.fields([
     {
       name: "img",
@@ -109,7 +115,7 @@ app.patch(
     });
 
     try {
-      res.send(doc);
+      res.redirect("/edit-media");
     } catch (error) {
       res.status(500).send(error);
     }
