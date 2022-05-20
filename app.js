@@ -1,12 +1,3 @@
-// app.get("/", function (req, res) {
-//   res.render("index");
-// });
-// app.get("/projects", function (req, res) {
-//     res.render("projects");
-// });
-// app.get("/project-landing", function (req, res) {
-//   res.render("project-landing");
-// });
 // app.get("/project-landing", function (req, res) {
 //   res.render("project-landing");
 // });
@@ -19,9 +10,6 @@
 // });
 // app.get("/admin/project-landing", function (req, res) {
 //   res.render("admin/a-project-landing");
-// });
-// app.get("/admin/media", function (req, res) {
-//     res.render("admin/a-media");
 // });
 // //route for magic page
 // // app.get("/magic", function (req, res) {
@@ -87,6 +75,10 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
+});
+
+app.get("/", function (req, res) {
+  res.render("index");
 });
 
 app.get("/admin/project-landing", function (req, res) {

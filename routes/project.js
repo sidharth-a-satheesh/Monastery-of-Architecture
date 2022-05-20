@@ -13,26 +13,27 @@ app.get("/projects", async (req, res) => {
   const projectCategories = await ProjectCategory.find({});
 
   try {
-    res.send(projectCategories);
+    res.render("projects", { projectCategories });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
 app.get("/projects/:category", async (req, res) => {
+  const projectCategories = await ProjectCategory.find({});
   const projectCategory = await ProjectCategory.findOne({
     name: req.params.category,
   });
 
   try {
-    res.send(projectCategory);
+    res.render("projectsCategory", { projectCategories, projectCategory });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
 // app.get("/projects/:category/:id", async (req, res) => {
-//   const project = 
+//   const project =
 // });
 
 app.post("/project-category", async (req, res) => {
