@@ -85,6 +85,6 @@ app.get("/admin/project-landing", function (req, res) {
   res.render("admin/a-project-landing");
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000 , () => {
   console.log("Server is running at port 3000");
 });
