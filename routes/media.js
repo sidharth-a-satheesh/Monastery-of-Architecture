@@ -100,14 +100,14 @@ app.post(
       await deleteFile(media.img);
       const img = await uploadFile(req.files.img[0]);
       await unlinkFile(req.files.img[0].path);
-      reqBody = { ...reqBody, img: img.Key };
+      reqBody = { ...reqBody, img: img.Location };
     }
     if (req.files.logo) {
       const media = await Media.findById(req.params.id);
       await deleteFile(media.logo);
       const logo = await uploadFile(req.files.logo[0]);
       await unlinkFile(req.files.logo[0].path);
-      reqBody = { ...reqBody, logo: logo.Key };
+      reqBody = { ...reqBody, logo: logo.Location };
     }
 
     const doc = await Media.findOneAndUpdate({ _id: req.params.id }, reqBody, {

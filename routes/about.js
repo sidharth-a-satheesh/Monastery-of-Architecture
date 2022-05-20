@@ -30,7 +30,7 @@ app.post("/about", upload.single("img"), async (req, res) => {
   if (req.file) {
     const result = await uploadFile(req.file);
     await unlinkFile(req.file.path);
-    reqBody = { ...req.body, img: result.Key };
+    reqBody = { ...req.body, img: result.Location };
   } else {
     reqBody = { ...req.body };
   }
@@ -62,7 +62,7 @@ app.post("/edit-about", upload.single("img"), async (req, res) => {
     await deleteFile(about.img);
     const result = await uploadFile(req.file);
     await unlinkFile(req.file.path);
-    reqBody = { ...req.body, img: result.Key };
+    reqBody = { ...req.body, img: result.Location };
   } else {
     reqBody = { ...req.body };
   }

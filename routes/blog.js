@@ -111,14 +111,14 @@ app.post(
       await deleteFile(blog.thumbnail);
       const thumbnail = await uploadFile(req.files.thumbnail[0]);
       await unlinkFile(req.files.thumbnail[0].path);
-      reqBody = { ...reqBody, thumbnail: thumbnail.Key };
+      reqBody = { ...reqBody, thumbnail: thumbnail.Location };
     }
     if (req.files.img) {
       const blog = await Blog.findById(req.params.id);
       await deleteFile(blog.img);
       const img = await uploadFile(req.files.img[0]);
       await unlinkFile(req.files.img[0].path);
-      reqBody = { ...reqBody, img: img.Key };
+      reqBody = { ...reqBody, img: img.Location };
     }
 
     const doc = await Blog.findOneAndUpdate({ _id: req.params.id }, reqBody, {
