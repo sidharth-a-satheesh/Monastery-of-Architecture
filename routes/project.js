@@ -78,18 +78,18 @@ app.post(
     if (req.files.thumbnail) {
       const thumbnail = await uploadFile(req.files.thumbnail[0]);
       await unlinkFile(req.files.thumbnail[0].path);
-      reqBody = { ...reqBody, thumbnail: thumbnail.Key };
+      reqBody = { ...reqBody, thumbnail: thumbnail.Location };
     }
     if (req.files.mainImg) {
       const mainImg = await uploadFile(req.files.mainImg[0]);
       await unlinkFile(req.files.mainImg[0].path);
-      reqBody = { ...reqBody, mainImg: mainImg.Key };
+      reqBody = { ...reqBody, mainImg: mainImg.Location };
     }
     if (req.files.imgs) {
       let imgs = [];
       for (let i = 0; i < req.files.imgs.length; i++) {
         let img = await uploadFile(req.files.imgs[i]);
-        imgs.push(img.Key);
+        imgs.push(img.Location);
         await unlinkFile(req.files.imgs[i].path);
       }
       reqBody = { ...reqBody, imgs: imgs };

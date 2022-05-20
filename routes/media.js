@@ -41,12 +41,12 @@ app.post(
     if (req.files.img) {
       const img = await uploadFile(req.files.img[0]);
       await unlinkFile(req.files.img[0].path);
-      reqBody = { ...reqBody, img: img.Key };
+      reqBody = { ...reqBody, img: img.Location };
     }
     if (req.files.logo) {
       const logo = await uploadFile(req.files.logo[0]);
       await unlinkFile(req.files.logo[0].path);
-      reqBody = { ...reqBody, logo: logo.Key };
+      reqBody = { ...reqBody, logo: logo.Location };
     }
 
     const media = new Media(reqBody);

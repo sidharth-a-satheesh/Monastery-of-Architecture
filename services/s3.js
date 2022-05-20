@@ -26,6 +26,9 @@ function uploadFile(file) {
     Bucket: bucketName,
     Body: fileStream,
     Key: file.filename,
+    ACL: 'public-read',
+    ContentType: file.mimetype,
+    ContentDisposition: 'inline',
   };
 
   return s3.upload(uploadParams).promise();
