@@ -39,30 +39,24 @@
     <div>
       <div>
         <p class="contact-header">Address</p>
-        <p class="contact-para nl">
-          <%- contact.address%>
-        </p>
+        <p class="contact-para nl"><%- contact.address%></p>
       </div>
       <div>
         <p class="contact-header">Internship</p>
-        <p class="contact-para nl">
-          <%- contact.internship%>
-        </p>
+        <p class="contact-para nl"><%- contact.internship%></p>
       </div>
       <div>
         <p class="contact-header">Career</p>
-        <p class="contact-para nl">
-          <%- contact.career %>
-        </p>
+        <p class="contact-para nl"><%- contact.career %></p>
       </div>
     </div>
     <div>
       <p class="contact-header">Send us a message</p>
       <form action="/messages" method="post">
-        <input type="text" name="name" id="" placeholder="Name">
-        <input type="text" name="phone" id="" placeholder="Phone">
-        <input type="email" name="email" id="" placeholder="Email">
-        <textarea name="message" id="" cols="auto" rows="13" placeholder="Message"></textarea>
+        <input type="text" name="name" id="" placeholder="Name" required>
+        <input type="text" name="phone" id="" placeholder="Phone" required>
+        <input type="email" name="email" id="" placeholder="Email" required>
+        <textarea name="message" id="" cols="auto" rows="13" placeholder="Message" required></textarea>
         <button type="submit" style="cursor: pointer;">SEND</button>
       </form>
     </div>

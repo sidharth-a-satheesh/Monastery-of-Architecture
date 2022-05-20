@@ -49,8 +49,7 @@
           <%= blog.date %> <br>
         </font>
       </p>
-      <p class="blog-para nl">
-        <%- blog.content %>
+      <p class="blog-para nl"><%- blog.content %>
       </p>
 
       <form action="/delete-blog/<%= blog._id %>" method="post">
