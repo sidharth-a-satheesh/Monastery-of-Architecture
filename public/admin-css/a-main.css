@@ -1044,3 +1044,7 @@ button{
     display: flex;
     align-items: flex-end;
 }
+
+h2{
+    color: #505050;
+}

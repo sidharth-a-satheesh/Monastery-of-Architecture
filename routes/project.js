@@ -32,9 +32,21 @@ app.get("/projects/:category", async (req, res) => {
   }
 });
 
-// app.get("/projects/:category/:id", async (req, res) => {
-//   const project =
-// });
+app.get("/projects/:category/:id", async (req, res) => {
+  const projectCategory = await ProjectCategory.findOne({
+    name: req.params.category,
+  });
+
+  const project = await projectCategory.projects.find(
+    (item) => item._id == req.params.id
+  );
+
+  try {
+    res.send(project);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 app.get("/add-project-category", async (req, res) => {
   res.render("admin/a-category-add");

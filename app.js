@@ -1,6 +1,4 @@
-// app.get("/project-landing", function (req, res) {
-//   res.render("project-landing");
-// });
+
 // //route for admin page
 // app.get("/admin", function (req, res) {
 //   res.render("admin/a-index");
@@ -77,6 +75,14 @@ app.get("/", function (req, res) {
 
 app.get("/admin/project-landing", function (req, res) {
   res.render("admin/a-project-landing");
+});
+
+app.get("/project-landing", function (req, res) {
+  res.render("project-landing");
+});
+
+app.get("/admin/edit-category", function (req, res) {
+  res.render("admin/a-edit-category");
 });
 
 app.listen(process.env.PORT || 3000, () => {
