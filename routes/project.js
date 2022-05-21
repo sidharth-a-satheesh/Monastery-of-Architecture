@@ -51,7 +51,7 @@ app.get("/add-project", async (req, res) => {
   const projectCategories = await ProjectCategory.find({});
 
   try {
-    res.send(projectCategories);
+    res.render("admin/a-project-add.ejs");
   } catch (error) {
     res.status(500).send(error);
   }
@@ -161,12 +161,13 @@ app.get("/edit-project", async (req, res) => {
 });
 
 app.get("/edit-project/:category", async (req, res) => {
+  const projectCategories = await ProjectCategory.find({});
   const projectCategory = await ProjectCategory.findOne({
     name: req.params.category,
   });
 
   try {
-    res.send(projectCategory);
+    res.render("admin/a-projectsCategory", { projectCategories, projectCategory });
   } catch (error) {
     res.status(500).send(error);
   }

@@ -5,16 +5,10 @@
 // app.get("/admin", function (req, res) {
 //   res.render("admin/a-index");
 // });
-// app.get("/admin/projects", function (req, res) {
-//     res.render("admin/a-projects");
-// });
 // app.get("/admin/project-landing", function (req, res) {
 //   res.render("admin/a-project-landing");
 // });
 // //route for magic page
-// // app.get("/magic", function (req, res) {
-// //   res.render("magic");
-// // });
 
 require("dotenv").config();
 const express = require("express");
@@ -85,6 +79,6 @@ app.get("/admin/project-landing", function (req, res) {
   res.render("admin/a-project-landing");
 });
 
-app.listen(process.env.PORT || 3000 , () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running at port 3000");
 });
