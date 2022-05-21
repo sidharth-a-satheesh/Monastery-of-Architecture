@@ -70,6 +70,10 @@ app.get("/admin/messages", function (req, res) {
   res.render("admin/a-messages");
 });
   
+app.get("/admin/edit-category", function (req, res) {
+  res.render("admin/a-edit-category");
+});
+
 //route for magic page
 // app.get("/magic", function (req, res) {
 //   res.render("magic");
