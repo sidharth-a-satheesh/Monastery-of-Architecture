@@ -18,9 +18,9 @@
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div class="navbar-nav  me-auto ml-auto text-center">
     <a class="nav-link nav-a" href="/admin">Home</a>
-    <a class="nav-link nav-a" href="/edit-project">Projects</a>
+    <a class="nav-link nav-a active" href="/edit-project">Projects</a>
     <a class="nav-link nav-a" href="/edit-about">About</a>
-    <a class="nav-link nav-a active" href="/edit-media">Media</a>
+    <a class="nav-link nav-a" href="/edit-media">Media</a>
     <a class="nav-link nav-a" href="/edit-blog">Blog</a>
     <a class="nav-link nav-a" href="/edit-contact">Contact</a>
   </div>
@@ -34,11 +34,44 @@
 
   <div class="blank" style="height: 129px;"></div>
 
-  <h2 class="mb-5">Add Project Category</h2>
+  <h2 class="mb-5">Add Project</h2>
 
-  <form action="/add-project-category" method="post">
+  <form action="/projects" method="post" enctype="multipart/form-data">
     <div>
-      <input type="text" name="name" class="mt-4" placeholder="Category" required>
+      <input type="text" name="name" class="mt-4" placeholder="Name" required>
+    </div>
+    <div>
+      <input type="text" name="location" class="mt-4" placeholder="Location" required>
+    </div>
+    <div>
+      <input type="text" name="startYear" class="mt-4" placeholder="Start Year" required>
+    </div>
+    <div>
+      <input type="text" name="endYear" class="mt-4" placeholder="End Year" required>
+    </div>
+    <div>
+      <textarea name="content" class="mt-4" id="" cols="150" rows="10" placeholder="Content" required></textarea>
+    </div>
+    <div>
+      <label for="">Thumbnail: </label>
+      <input type="file" name="thumbnail" required>
+    </div>
+    <div>
+      <label for="">Main Image: </label>
+      <input type="file" name="mainImg" required>
+    </div>
+    <div>
+      <label for="">Additional Images: </label>
+      <input type="file" name="imgs" multiple>
+    </div>
+    <div>
+      <label for="">Category: </label>
+      <select name="category" required>
+        <option selected disabled hidden value="">Choose here</option>
+        <% for (let i = 0; i < projectCategories.length; i++) {%>
+        <option value="<%= projectCategories[i].name %>"><%= projectCategories[i].name %></option>
+        <% } %>
+      </select>
     </div>
     <div class=" text-left mt-4">
       <a href=""><button type="submit" class="btn btn-secondary pl-5 pr-5">Submit</button></a>

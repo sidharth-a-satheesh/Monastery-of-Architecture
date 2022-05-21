@@ -36,7 +36,11 @@ app.get("/projects/:category", async (req, res) => {
 //   const project =
 // });
 
-app.post("/project-category", async (req, res) => {
+app.get("/add-project-category", async (req, res) => {
+  res.render("admin/a-category-add");
+});
+
+app.post("/add-project-category", async (req, res) => {
   const projectCategory = new ProjectCategory(req.body);
 
   try {
@@ -51,7 +55,7 @@ app.get("/add-project", async (req, res) => {
   const projectCategories = await ProjectCategory.find({});
 
   try {
-    res.render("admin/a-project-add.ejs");
+    res.render("admin/a-project-add.ejs", { projectCategories });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -105,7 +109,7 @@ app.post(
         if (!err) {
           projectCategory.projects.push(project);
           await projectCategory.save();
-          res.send(projectCategory);
+          res.redirect("/edit-project");
         } else {
           res.status(500).send(error);
         }
@@ -167,7 +171,10 @@ app.get("/edit-project/:category", async (req, res) => {
   });
 
   try {
-    res.render("admin/a-projectsCategory", { projectCategories, projectCategory });
+    res.render("admin/a-projectsCategory", {
+      projectCategories,
+      projectCategory,
+    });
   } catch (error) {
     res.status(500).send(error);
   }
