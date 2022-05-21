@@ -42,14 +42,14 @@ app.get("/projects/:category/:id", async (req, res) => {
   );
 
   try {
-    res.send(project);
+    res.render("project-landing", { project });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
 app.get("/add-project-category", async (req, res) => {
-  res.render("admin/a-category-add");
+  res.render("admin/a-project-category-add");
 });
 
 app.post("/add-project-category", async (req, res) => {
@@ -134,13 +134,13 @@ app.get("/edit-project-category", async (req, res) => {
   const projectCategories = await ProjectCategory.find({});
 
   try {
-    res.send(projectCategories);
+    res.render("admin/a-project-categories-edit", { projectCategories });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-app.patch("/project-category/:id", async (req, res) => {
+app.post("/edit-project-category/:id", async (req, res) => {
   const doc = await ProjectCategory.findOneAndUpdate(
     { _id: req.params.id },
     req.body,
@@ -150,17 +150,17 @@ app.patch("/project-category/:id", async (req, res) => {
   );
 
   try {
-    res.send(doc);
+    res.redirect("/edit-project");
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-app.delete("/project-category/:id", async (req, res) => {
+app.get("/delete-project-category/:id", async (req, res) => {
   const doc = await ProjectCategory.deleteOne({ _id: req.params.id });
 
   try {
-    res.send(doc);
+    res.redirect("/edit-project");
   } catch (error) {
     res.status(500).send(error);
   }

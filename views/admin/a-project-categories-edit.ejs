@@ -1,0 +1,37 @@
+<%- include ('partials/a-header.ejs') %>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav  me-auto ml-auto text-center">
+    <a class="nav-link nav-a" href="/admin">Home</a>
+    <a class="nav-link nav-a" href="/admin/projects">Projects</a>
+    <a class="nav-link nav-a" href="/admin/about">About</a>
+    <a class="nav-link nav-a" href="/admin/media">Media</a>
+    <a class="nav-link nav-a" href="/admin/blog">Blog</a>
+    <a class="nav-link nav-a" href="/admin/contact">Contact</a>
+  </div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<div class="blank" style="height: 129px;"></div>
+
+<div class="container">
+  <h2>Edit Category</h2>
+  <div class="d-flex flex-row-reverse mb-5">
+    <a href="/add-project-category"><button type="button" class="btn btn-secondary contact-button">ADD CATEGORY</button></a>
+  </div>
+  <% for(let i = 0; i < projectCategories.length; i++) { %>
+  <div class="mb-4">
+    <form action="/edit-project-category/<%= projectCategories[i]._id %>" method="post">
+      <input type="text" name="name" value="<%= projectCategories[i].name %> " style="width: 50%;">
+      <button type="submit" class="btn btn-secondary">UPDATE</button>
+      <a href="/delete-project-category/<%= projectCategories[i]._id %>"><button type="button" class="btn btn-secondary">DELETE</button></a>
+    </form>
+  </div>
+  <% } %>
+</div>
+
+
+
+<%- include ('partials/a-footer.ejs') %>
