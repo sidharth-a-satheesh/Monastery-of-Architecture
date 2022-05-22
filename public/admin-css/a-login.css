@@ -175,7 +175,7 @@ body {
   margin: 0 0 35px;
   padding: 10px 0 10px 50px;
   color: darkblue;
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -192,7 +192,7 @@ body {
   height: 60px;
   border: 0;
   color: #212121;
-  font-size: 24px;
+  font-size: 1rem;
   font-weight: 400;
 }
 .card .input-container input:focus ~ label {
@@ -250,7 +250,7 @@ body {
   background: 0;
   width: 240px;
   border: 2px solid #e3e3e3;
-  padding: 20px 0;
+  padding: 15px 0;
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
