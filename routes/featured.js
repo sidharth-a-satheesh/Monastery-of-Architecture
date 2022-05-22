@@ -58,4 +58,16 @@ app.get("/un-feature/:category/:id", async (req, res) => {
   }
 });
 
+app.get("/featured-project/:id", async (req, res) => {
+  const featuredProject = await Featured.findOne({
+    _id: req.params.id,
+  });
+
+  try {
+    res.render("featured-landing", { project: featuredProject });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 module.exports = app;
