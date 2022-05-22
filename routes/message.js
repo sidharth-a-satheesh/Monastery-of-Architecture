@@ -1,6 +1,17 @@
 const express = require("express");
 const Message = require("../models/message");
 const app = express();
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  port: 465,
+  host: "smtp.gmail.com",
+  auth: {
+    user: "arshaddanishthana@gmail.com",
+    pass: "123Iamad149@",
+  },
+  secure: true,
+});
 
 app.get("/messages", async (req, res) => {
   const messages = await Message.find({});
@@ -13,6 +24,19 @@ app.get("/messages", async (req, res) => {
 });
 
 app.post("/messages", async (req, res) => {
+  const mailData = {
+    from: req.body.email,
+    to: "arshaddanish@ieee.org",
+    subject: "Message via MOA Website",
+    text: req.body.message,
+    // html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer<br/>",
+  };
+
+  transporter.sendMail(mailData, function (err, info) {
+    if (err) console.log(err);
+    else console.log(info);
+  });
+
   const message = new Message(req.body);
 
   try {
