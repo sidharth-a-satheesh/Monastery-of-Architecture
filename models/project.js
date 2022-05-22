@@ -32,7 +32,6 @@ const ProjectSchema = new mongoose.Schema({
 });
 
 const Project = mongoose.model("Project", ProjectSchema);
-const Featured = mongoose.model("Featured", ProjectSchema);
 
 const ProjectCategorySchema = new mongoose.Schema({
   name: {
@@ -49,4 +48,4 @@ const ProjectCategory = mongoose.model(
   ProjectCategorySchema
 );
 
-module.exports = { Project, Featured, ProjectCategory };
+module.exports = { Project, ProjectCategory };

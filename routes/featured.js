@@ -1,5 +1,7 @@
 const express = require("express");
-const { Featured, ProjectCategory } = require("../models/project");
+const { Featured } = require("../models/featured");
+const { ProjectCategory } = require("../models/project");
+
 const app = express();
 
 app.get("/featured", async (req, res) => {
@@ -32,7 +34,7 @@ app.get("/featured/:category/:id", async (req, res) => {
     content: featuredProject.content,
     mainImg: featuredProject.mainImg,
     imgs: featuredProject.imgs,
-    featured: featuredProject.featured,
+    category: projectCategory.name,
   });
   await featured.save();
 
@@ -61,16 +63,6 @@ app.get("/un-feature/:category/:id", async (req, res) => {
 
   try {
     res.redirect("/edit-project");
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-app.get("/delete-featured", async (req, res) => {
-  const doc = await Featured.deleteMany({});
-
-  try {
-    res.send(doc);
   } catch (error) {
     res.status(500).send(error);
   }
