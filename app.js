@@ -63,10 +63,6 @@ db.once("open", function () {
   console.log("Connected successfully");
 });
 
-app.get("/admin", function (req, res) {
-  res.render("admin/a-index");
-});
-
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running at port 3000");
 });

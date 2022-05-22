@@ -42,4 +42,8 @@ app.post("/", upload.single("img"), async (req, res) => {
   }
 });
 
+app.get("/edit-home", function (req, res) {
+  res.render("admin/a-index");
+});
+
 module.exports = app;
