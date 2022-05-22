@@ -637,7 +637,7 @@ button{
     font-weight: 325;
 }
 .proj-types a{
-    color: #505050 !important;
+    color: #505050;
     margin-right: 2rem;
 }
 .proj-types a:hover{

@@ -17,7 +17,7 @@
 <div class="blank" style="height: 129px;"></div>
 <div class="proj">
   <div class="proj-types">
-    <a href="/edit-project">All Projects</a>
+    <a href="/edit-project" class="active">All Projects</a>
     <% for (let i = 0; i < projectCategories.length; i++) {%>
     <a href="/edit-project/<%= projectCategories[i].name %>"><%= projectCategories[i].name %></a>
     <% } %>

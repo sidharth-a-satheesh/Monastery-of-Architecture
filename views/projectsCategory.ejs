@@ -1,4 +1,3 @@
-
 <%- include ('partials/header.ejs') %>
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div class="navbar-nav  me-auto ml-auto text-center">
@@ -20,7 +19,8 @@
   <div class="proj-types">
     <a href="/projects">All Projects</a>
     <% for (let i = 0; i < projectCategories.length; i++) {%>
-    <a href="/projects/<%= projectCategories[i].name %>"><%= projectCategories[i].name %></a>
+    <% let active = projectCategories[i].name == projectCategory.name ? " active": ""; %>
+    <a href="/projects/<%= projectCategories[i].name %>" class=<%= active %>><%= projectCategories[i].name %></a>
     <% } %>
   </div>
 
