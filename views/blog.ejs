@@ -30,7 +30,7 @@
           <%= blog.date.toString().substring(4, 16) %> <br>
         </font>
       </p>
-      <p class="blog-para nl"><%- blog.content %>
+      <p class="blog-para nl"><%- blog.content.substr(0, 200) + '&hellip;' %>
       </p>
       <a href="/blogs/<%= blog._id %>"><button type="submit">READ MORE</button></a>
     </div>
