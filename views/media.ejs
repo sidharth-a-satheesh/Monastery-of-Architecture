@@ -1,4 +1,3 @@
-
 <%- include ('partials/header.ejs') %>
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div class="navbar-nav  me-auto ml-auto text-center">
@@ -26,7 +25,7 @@
     </div>
     <p class="nl"><%- item.content %>
       <br>
-      <font class="media-date"><%= item.date %></font>
+      <font class="media-date"><%= item.date.toString().substring(4, 16) %></font>
     </p>
   </div>
   <% } %>
