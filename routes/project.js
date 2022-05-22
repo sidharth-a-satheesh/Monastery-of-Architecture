@@ -193,10 +193,33 @@ app.get("/edit-project/:category", async (req, res) => {
 });
 
 app.get("/edit-project/:category/:id", async (req, res) => {
-  const projectCategories = await ProjectCategory.findOne({});
+  const projectCategory = await ProjectCategory.findOne({
+    name: req.params.category,
+  });
+
+  const project = await projectCategory.projects.find(
+    (item) => item._id == req.params.id
+  );
 
   try {
-    res.send(projectCategories);
+    res.render("admin/a-project-edit", { project });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+app.post("/edit-project/:category/:id", async (req, res) => {
+
+});
+
+app.get("/delete-project/:category/:id", async (req, res) => {
+  const projectCategory = await ProjectCategory.findOneAndUpdate(
+    { name: req.params.category },
+    { $pull: { projects: { _id: req.params.id } } }
+  );
+
+  try {
+    res.redirect("/edit-project");
   } catch (error) {
     res.status(500).send(error);
   }

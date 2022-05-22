@@ -34,7 +34,7 @@
     <% let project = projects[i]; %>
     <div>
       <div>
-        <a href="/admin/project-landing"><img src="<%= project.thumbnail %>" alt=""></a>
+        <img src="<%= project.thumbnail %>" alt="">
       </div>
       <div class="proj-imgtitle">
         <div class="proj-t1">
@@ -46,10 +46,10 @@
       </div>
       <div class="d-flex float-right mb-5">
         <div class="add-button-div">
-          <a href="/admin/project-landing"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">EDIT</button></a>
+          <a href="/edit-project/<%= projectCategory.name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">EDIT</button></a>
         </div>
         <div class="add-button-div">
-          <a href=""><button type="button" class="btn btn-secondary pl-5 pr-5">DELETE</button></a>
+          <a href="/delete-project/<%= projectCategory.name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">DELETE</button></a>
         </div>
       </div>
     </div>
