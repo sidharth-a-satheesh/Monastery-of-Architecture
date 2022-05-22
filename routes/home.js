@@ -71,7 +71,7 @@ app.post("/edit-home", upload.single("img"), async (req, res) => {
 });
 
 app.get("/admin", async (req, res) => {
-  res.render("admin/a-admin");
+  res.render("admin/a-login");
 });
 
 module.exports = app;
