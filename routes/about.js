@@ -10,10 +10,10 @@ const {
   deleteFile,
 } = require("../services/s3");
 
-app.get("/images/:key", (req, res) => {
-  const readStream = getFileStream(req.params.key);
-  readStream.pipe(res);
-});
+// app.get("/images/:key", (req, res) => {
+//   const readStream = getFileStream(req.params.key);
+//   readStream.pipe(res);
+// });
 
 app.get("/about", async (req, res) => {
   const about = await About.findOne({ id: 1 });

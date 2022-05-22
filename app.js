@@ -19,6 +19,7 @@ const BlogRouter = require("./routes/blog");
 const ProjectRouter = require("./routes/project");
 const FeaturedRouter = require("./routes/featured");
 const AdminRouter = require("./routes/admin");
+const HomeRouter = require("./routes/home");
 const Admin = require("./models/admin");
 
 app.use(express.json());
@@ -31,6 +32,7 @@ app.use(BlogRouter);
 app.use(ProjectRouter);
 app.use(AdminRouter);
 app.use(FeaturedRouter);
+app.use(HomeRouter);
 
 //Authentication
 app.use(
@@ -59,10 +61,6 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
-});
-
-app.get("/", function (req, res) {
-  res.render("index");
 });
 
 app.get("/admin", function (req, res) {

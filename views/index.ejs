@@ -1,36 +1,40 @@
-
 <%- include ('partials/header.ejs') %>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav  me-auto ml-auto text-center">
-        <a class="nav-link nav-a active" href="/">Home</a>
-        <a class="nav-link nav-a" href="/projects">Projects</a>
-        <a class="nav-link nav-a" href="/about">About</a>
-        <a class="nav-link nav-a" href="/media">Media</a>
-        <a class="nav-link nav-a" href="/blogs">Blog</a>
-        <a class="nav-link nav-a" href="/contact">Contact</a>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav  me-auto ml-auto text-center">
+    <a class="nav-link nav-a active" href="/">Home</a>
+    <a class="nav-link nav-a" href="/projects">Projects</a>
+    <a class="nav-link nav-a" href="/about">About</a>
+    <a class="nav-link nav-a" href="/media">Media</a>
+    <a class="nav-link nav-a" href="/blogs">Blog</a>
+    <a class="nav-link nav-a" href="/contact">Contact</a>
+  </div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<div class="blank" style="height: 129px;"></div>
+<section class="home-page">
+  <section id="section-1">
+    <div>
+      <img class="img-1" src="<%= home.img %>" alt="">
+    </div>
+  </section>
+  <section id="section-2">
+    <h2 class="mb-5 mt-4" style="text-align: center;">Featured Projects</h2>
+    <% for(let i = 0; i < featured.length; i++) { %>
+    <div id="section2-1">
+      <img id="img-2" src="<%= featured[i].thumbnail %>" alt="">
+      <div id="hidden-2">
+        <div class="img-home-hover">
+          <font><%= featured[i].name %> </font><br><%= featured[i].category %>
         </div>
+        <a href="/featured-project/<%= featured[i]._id %>"><button type="button">VIEW PROJECT</button></a>
+      </div>
     </div>
-    </div>
-    </nav>
-    </div>
-    </div>
-    </header>
-    <div class="blank" style="height: 129px;"></div>
-    <section class="home-page">
-    <section id="section-1">
-        <div>
-            <img class="img-1" src="images/spam/1.jpg" alt="">
-        </div>
-    </section>
-    <section id="section-2">
-        <div id="section2-1">
-            <img id="img-2" src="Projects/THE SECRET GARDEN HOUSE, CALICUT/DSC_2741-1 copy copy.jpg" alt="">
-            <div id="hidden-2">
-                <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
-                <a href=""><button type="button">VIEW PROJECT</button></a>
-            </div>
-        </div>
-        <div id="section2-2">
+    <% } %>
+    <!-- <div id="section2-2">
             <div id="div-img-3">
                 <img id="img-3" src="images/spam/2.jpg" alt="">
                 <div id="hidden-3">
@@ -92,7 +96,7 @@
                 <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
                 <a href=""><button type="button">VIEW PROJECT</button></a>
             </div>
-        </div>
-    </section>
+        </div> -->
+  </section>
 </section>
-    <%- include ('partials/footer.ejs') %>  
+<%- include ('partials/footer.ejs') %>

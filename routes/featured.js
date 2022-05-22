@@ -4,16 +4,6 @@ const { ProjectCategory } = require("../models/project");
 
 const app = express();
 
-app.get("/featured", async (req, res) => {
-  const featured = await Featured.find({});
-
-  try {
-    res.send(featured);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
 app.get("/featured/:category/:id", async (req, res) => {
   const projectCategory = await ProjectCategory.findOne({
     name: req.params.category,
