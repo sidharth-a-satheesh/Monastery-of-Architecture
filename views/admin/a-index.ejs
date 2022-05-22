@@ -1,31 +1,33 @@
-
 <%- include ('partials/a-header.ejs') %>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav  me-auto ml-auto text-center">
-            <a class="nav-link nav-a active" href="/edit-home">Home</a>
-            <a class="nav-link nav-a" href="/edit-project">Projects</a>
-            <a class="nav-link nav-a" href="/edit-about">About</a>
-            <a class="nav-link nav-a" href="/edit-media">Media</a>
-            <a class="nav-link nav-a" href="/edit-blog">Blog</a>
-            <a class="nav-link nav-a" href="/edit-contact">Contact</a>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav  me-auto ml-auto text-center">
+    <a class="nav-link nav-a active" href="/edit-home">Home</a>
+    <a class="nav-link nav-a" href="/edit-project">Projects</a>
+    <a class="nav-link nav-a" href="/edit-about">About</a>
+    <a class="nav-link nav-a" href="/edit-media">Media</a>
+    <a class="nav-link nav-a" href="/edit-blog">Blog</a>
+    <a class="nav-link nav-a" href="/edit-contact">Contact</a>
+  </div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<div class="blank" style="height: 129px;"></div>
+<section class="home-page">
+  <section id="section-1">
+    <form action="/edit-home" method="post" enctype="multipart/form-data">
+      <div>
+        <img class="img-1" src="<%= home.img %>" alt="">
+        <div class="add-button-div mr-3 pt-2 pl-5 pr-5 my-5">
+          <input type="file" name="img" id="" class="mb-3" required>
+          <button type="submit" class="btn btn-secondary pl-5 pr-5">Update Image</button>
         </div>
-    </div>
-    </div>
-    </nav>
-    </div>
-    </div>
-    </header>
-    <div class="blank" style="height: 129px;"></div>
-    <section class="home-page">
-    <section id="section-1">
-        <div>
-            <img class="img-1" src="images/spam/1.jpg" alt="">
-            <div class="add-button-div mr-3 pt-2 pl-5 pr-5">
-                <a href=""><button type="button" class="btn btn-secondary pl-5 pr-5">CHANGE IMAGE</button></a>
-            </div>
-        </div>
-    </section>
-    <section id="section-2">
+      </div>
+    </form>
+  </section>
+  <!-- <section id="section-2">
         <div id="section2-1">
             <img id="img-2" src="Projects/THE SECRET GARDEN HOUSE, CALICUT/DSC_2741-1 copy copy.jpg" alt="">
             <div id="hidden-2">
@@ -117,6 +119,6 @@
                 <a href=""><button type="button" class="btn btn-secondary pl-5 pr-5">EDIT</button></a>
             </div>
         </div>
-    </section>
+    </section> -->
 </section>
-    <%- include ('partials/a-footer.ejs') %>  
+<%- include ('partials/a-footer.ejs') %>
