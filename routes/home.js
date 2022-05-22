@@ -74,4 +74,12 @@ app.get("/admin", async (req, res) => {
   res.render("admin/a-login");
 });
 
+app.post("/admin", async (req, res) => {
+  if (req.body.username === "moa" && req.body.password === "moa") {
+    res.redirect("/edit-home");
+  } else {
+    res.redirect("/admin");
+  }
+});
+
 module.exports = app;
