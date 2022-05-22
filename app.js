@@ -1,13 +1,3 @@
-
-// //route for admin page
-// app.get("/admin", function (req, res) {
-//   res.render("admin/a-index");
-// });
-// app.get("/admin/project-landing", function (req, res) {
-//   res.render("admin/a-project-landing");
-// });
-// //route for magic page
-
 require("dotenv").config();
 const express = require("express");
 const app = express();
@@ -27,6 +17,7 @@ const AboutRouter = require("./routes/about");
 const MediaRouter = require("./routes/media");
 const BlogRouter = require("./routes/blog");
 const ProjectRouter = require("./routes/project");
+const FeaturedRouter = require("./routes/featured");
 const AdminRouter = require("./routes/admin");
 const Admin = require("./models/admin");
 
@@ -39,6 +30,7 @@ app.use(MediaRouter);
 app.use(BlogRouter);
 app.use(ProjectRouter);
 app.use(AdminRouter);
+app.use(FeaturedRouter);
 
 //Authentication
 app.use(
@@ -73,16 +65,8 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
-app.get("/admin/project-landing", function (req, res) {
-  res.render("admin/a-project-landing");
-});
-
-app.get("/project-landing", function (req, res) {
-  res.render("project-landing");
-});
-
-app.get("/admin/edit-category", function (req, res) {
-  res.render("admin/a-edit-category");
+app.get("/admin", function (req, res) {
+  res.render("admin/a-index");
 });
 
 app.listen(process.env.PORT || 3000, () => {

@@ -1,4 +1,3 @@
-
 <%- include ('partials/a-header.ejs') %>
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div class="navbar-nav  me-auto ml-auto text-center">
@@ -50,8 +49,17 @@
           <a href="/edit-project/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">EDIT</button></a>
         </div>
         <div class="add-button-div">
-          <a href="/delete-project/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">DELETE</button></a>
+          <a href="/delete-project/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">DELETE</button></a>
         </div>
+        <% if(project.featured) { %>
+        <div class="add-button-div">
+          <a href="/un-feature/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">UN-FEATURE</button></a>
+        </div>
+        <% } else { %>
+        <div class="add-button-div">
+          <a href="/featured/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">FEATURE</button></a>
+        </div>
+        <% } %>
       </div>
     </div>
     <% } %>

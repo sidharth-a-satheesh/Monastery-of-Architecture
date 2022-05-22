@@ -25,9 +25,14 @@ const ProjectSchema = new mongoose.Schema({
   imgs: {
     type: [String],
   },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Project = mongoose.model("Project", ProjectSchema);
+const Featured = mongoose.model("Featured", ProjectSchema);
 
 const ProjectCategorySchema = new mongoose.Schema({
   name: {
@@ -44,4 +49,4 @@ const ProjectCategory = mongoose.model(
   ProjectCategorySchema
 );
 
-module.exports = { Project, ProjectCategory };
+module.exports = { Project, Featured, ProjectCategory };

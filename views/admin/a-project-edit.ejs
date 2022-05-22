@@ -1,0 +1,58 @@
+<%- include ('partials/a-header.ejs') %>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav  me-auto ml-auto text-center">
+    <a class="nav-link nav-a" href="/admin">Home</a>
+    <a class="nav-link nav-a active" href="/edit-project">Projects</a>
+    <a class="nav-link nav-a" href="/edit-about">About</a>
+    <a class="nav-link nav-a" href="/edit-media">Media</a>
+    <a class="nav-link nav-a" href="/edit-blog">Blog</a>
+    <a class="nav-link nav-a" href="/edit-contact">Contact</a>
+  </div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<div class="container">
+
+  <div class="blank" style="height: 129px;"></div>
+
+  <h2 class="mb-5">Edit Project</h2>
+
+  <form action="/projects" method="post" enctype="multipart/form-data">
+    <div>
+      <input type="text" name="name" class="mt-4" value="<%= project.name %>" placeholder="Name">
+    </div>
+    <div>
+      <input type="text" name="location" class="mt-4" value="<%= project.location %>" placeholder="Location">
+    </div>
+    <div>
+      <input type="text" name="startYear" class="mt-4" value="<%= project.startYear %>" placeholder="Start Year">
+    </div>
+    <div>
+      <input type="text" name="endYear" class="mt-4" value="<%= project.endYear %>" placeholder="End Year">
+    </div>
+    <div>
+      <textarea name="content" class="mt-4" id="" cols="150" rows="10" placeholder="Content"><%- project.content %></textarea>
+    </div>
+    <div>
+      <label for="">Thumbnail: </label>
+      <input type="file" name="thumbnail">
+    </div>
+    <div>
+      <label for="">Main Image: </label>
+      <input type="file" name="mainImg">
+    </div>
+    <div>
+      <label for="">Additional Images: </label>
+      <input type="file" name="imgs" multiple>
+    </div>
+    <!-- h.txt -->
+    <div class=" text-left mt-4">
+      <a href=""><button type="submit" class="btn btn-secondary pl-5 pr-5">Submit</button></a>
+    </div>
+  </form>
+</div>
+
+<%- include ('partials/a-footer.ejs') %>
