@@ -7,10 +7,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 app.use(cors());
 
-// Authentication
-const session = require("express-session");
-const passport = require("passport");
-
 const ContactRouter = require("./routes/contact");
 const MessageRouter = require("./routes/message");
 const AboutRouter = require("./routes/about");
@@ -33,20 +29,6 @@ app.use(ProjectRouter);
 app.use(AdminRouter);
 app.use(FeaturedRouter);
 app.use(HomeRouter);
-
-//Authentication
-app.use(
-  session({
-    secret: process.env.AUTH_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use(Admin.createStrategy());
-passport.serializeUser(Admin.serializeUser());
-passport.deserializeUser(Admin.deserializeUser());
 
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
