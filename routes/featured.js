@@ -1,10 +1,15 @@
 const express = require("express");
+const app = express();
 const { Featured } = require("../models/featured");
 const { ProjectCategory } = require("../models/project");
-
-const app = express();
+const Auth = require("../auth");
+app.use(Auth);
 
 app.get("/featured/:category/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategory = await ProjectCategory.findOne({
     name: req.params.category,
   });
@@ -36,6 +41,10 @@ app.get("/featured/:category/:id", async (req, res) => {
 });
 
 app.get("/un-feature/:category/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategory = await ProjectCategory.findOne({
     name: req.params.category,
   });

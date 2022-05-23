@@ -2,6 +2,8 @@ const express = require("express");
 const Message = require("../models/message");
 const app = express();
 const nodemailer = require("nodemailer");
+const Auth = require("../auth");
+app.use(Auth);
 
 const transporter = nodemailer.createTransport({
   port: 465,
@@ -14,6 +16,10 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get("/messages", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const messages = await Message.find({});
 
   try {
@@ -48,6 +54,10 @@ app.post("/messages", async (req, res) => {
 });
 
 app.post("/delete-message", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const doc = await Message.deleteOne({ _id: req.body._id });
 
   try {

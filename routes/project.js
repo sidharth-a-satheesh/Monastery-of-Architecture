@@ -1,6 +1,8 @@
 const express = require("express");
 const { Project, ProjectCategory } = require("../models/project");
 const app = express();
+const Auth = require("../auth");
+app.use(Auth);
 
 const {
   upload,
@@ -49,10 +51,18 @@ app.get("/projects/:category/:id", async (req, res) => {
 });
 
 app.get("/add-project-category", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   res.render("admin/a-project-category-add");
 });
 
 app.post("/add-project-category", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategory = new ProjectCategory(req.body);
 
   try {
@@ -64,6 +74,10 @@ app.post("/add-project-category", async (req, res) => {
 });
 
 app.get("/add-project", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategories = await ProjectCategory.find({});
 
   try {
@@ -90,6 +104,10 @@ app.post(
     },
   ]),
   async (req, res) => {
+    if (!req.isAuthenticated()) {
+      res.redirect("/admin");
+    }
+
     let reqBody = { ...req.body };
     if (req.files.thumbnail) {
       const thumbnail = await uploadFile(req.files.thumbnail[0]);
@@ -131,6 +149,10 @@ app.post(
 );
 
 app.get("/edit-project-category", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategories = await ProjectCategory.find({});
 
   try {
@@ -141,6 +163,10 @@ app.get("/edit-project-category", async (req, res) => {
 });
 
 app.post("/edit-project-category/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const doc = await ProjectCategory.findOneAndUpdate(
     { _id: req.params.id },
     req.body,
@@ -157,6 +183,10 @@ app.post("/edit-project-category/:id", async (req, res) => {
 });
 
 app.get("/delete-project-category/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const doc = await ProjectCategory.deleteOne({ _id: req.params.id });
 
   try {
@@ -167,6 +197,10 @@ app.get("/delete-project-category/:id", async (req, res) => {
 });
 
 app.get("/edit-project", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategories = await ProjectCategory.find({});
 
   try {
@@ -177,6 +211,10 @@ app.get("/edit-project", async (req, res) => {
 });
 
 app.get("/edit-project/:category", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategories = await ProjectCategory.find({});
   const projectCategory = await ProjectCategory.findOne({
     name: req.params.category,
@@ -193,6 +231,10 @@ app.get("/edit-project/:category", async (req, res) => {
 });
 
 app.get("/edit-project/:category/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategory = await ProjectCategory.findOne({
     name: req.params.category,
   });
@@ -228,6 +270,10 @@ app.post(
     },
   ]),
   async (req, res) => {
+    if (!req.isAuthenticated()) {
+      res.redirect("/admin");
+    }
+
     const projectCategory = await ProjectCategory.findOne({
       name: req.params.category,
     });
@@ -277,6 +323,10 @@ app.post(
 );
 
 app.get("/delete-project/:category/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const projectCategory = await ProjectCategory.findOneAndUpdate(
     { name: req.params.category },
     { $pull: { projects: { _id: req.params.id } } }

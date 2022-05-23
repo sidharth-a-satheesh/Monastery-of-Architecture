@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const Home = require("../models/home");
 const { Featured } = require("../models/featured");
+const Auth = require("../auth");
+app.use(Auth);
 
 const {
   upload,
@@ -43,11 +45,19 @@ app.post("/", upload.single("img"), async (req, res) => {
 });
 
 app.get("/edit-home", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const home = await Home.findOne({ id: 1 });
   res.render("admin/a-index", { home });
 });
 
 app.post("/edit-home", upload.single("img"), async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   let reqBody;
   if (req.file) {
     const home = await Home.findOne({ id: 1 });

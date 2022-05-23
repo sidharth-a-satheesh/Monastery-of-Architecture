@@ -2,6 +2,8 @@ const express = require("express");
 const Media = require("../models/media");
 const { toJsFormat } = require("../services/formatDate");
 const app = express();
+const Auth = require("../auth");
+app.use(Auth);
 
 const {
   upload,
@@ -21,6 +23,10 @@ app.get("/media", async (req, res) => {
 });
 
 app.get("/add-media", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   res.render("admin/a-media-add");
 });
 
@@ -37,6 +43,10 @@ app.post(
     },
   ]),
   async (req, res) => {
+    if (!req.isAuthenticated()) {
+      res.redirect("/admin");
+    }
+
     let reqBody = { ...req.body };
     if (req.files.img) {
       const img = await uploadFile(req.files.img[0]);
@@ -61,6 +71,10 @@ app.post(
 );
 
 app.get("/edit-media", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const media = await Media.find({});
 
   try {
@@ -71,6 +85,10 @@ app.get("/edit-media", async (req, res) => {
 });
 
 app.get("/edit-media/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const media = await Media.findOne({ _id: req.params.id });
   let date = await toJsFormat(media.date);
 
@@ -94,6 +112,10 @@ app.post(
     },
   ]),
   async (req, res) => {
+    if (!req.isAuthenticated()) {
+      res.redirect("/admin");
+    }
+
     let reqBody = { ...req.body };
     if (req.files.img) {
       const media = await Media.findById(req.params.id);
@@ -123,6 +145,10 @@ app.post(
 );
 
 app.post("/delete-media/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const doc = await Media.deleteOne({ _id: req.params.id });
 
   try {

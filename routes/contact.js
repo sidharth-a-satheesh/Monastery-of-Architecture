@@ -1,6 +1,8 @@
 const express = require("express");
 const Contact = require("../models/contact");
 const app = express();
+const Auth = require("../auth");
+app.use(Auth);
 
 app.get("/contact", async (req, res) => {
   const contact = await Contact.findOne({ id: 1 });
@@ -13,6 +15,10 @@ app.get("/contact", async (req, res) => {
 });
 
 app.post("/contact", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const contact = new Contact(req.body);
 
   try {
@@ -24,6 +30,10 @@ app.post("/contact", async (req, res) => {
 });
 
 app.get("/edit-contact", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const contact = await Contact.findOne({ id: 1 });
 
   try {
@@ -34,6 +44,10 @@ app.get("/edit-contact", async (req, res) => {
 });
 
 app.post("/edit-contact", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const doc = await Contact.findOneAndUpdate({ id: 1 }, req.body, {
     new: true,
   });

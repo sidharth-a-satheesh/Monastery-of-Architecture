@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const About = require("../models/about");
+const Auth = require("../auth");
+app.use(Auth);
 
 const {
   upload,
@@ -26,6 +28,10 @@ app.get("/about", async (req, res) => {
 });
 
 app.post("/about", upload.single("img"), async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   let reqBody;
   if (req.file) {
     const result = await uploadFile(req.file);
@@ -46,6 +52,10 @@ app.post("/about", upload.single("img"), async (req, res) => {
 });
 
 app.get("/edit-about", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const about = await About.findOne({ id: 1 });
 
   try {
@@ -56,6 +66,10 @@ app.get("/edit-about", async (req, res) => {
 });
 
 app.post("/edit-about", upload.single("img"), async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   let reqBody;
   if (req.file) {
     const about = await About.findOne({ id: 1 });

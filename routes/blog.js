@@ -2,6 +2,8 @@ const express = require("express");
 const Blog = require("../models/blog");
 const { toJsFormat } = require("../services/formatDate");
 const app = express();
+const Auth = require("../auth");
+app.use(Auth);
 
 const {
   upload,
@@ -31,6 +33,10 @@ app.get("/blogs/:id", async (req, res) => {
 });
 
 app.get("/add-blog", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   res.render("admin/a-blog-add");
 });
 
@@ -47,6 +53,10 @@ app.post(
     },
   ]),
   async (req, res) => {
+    if (!req.isAuthenticated()) {
+      res.redirect("/admin");
+    }
+
     let reqBody = { ...req.body };
     if (req.files.thumbnail) {
       const thumbnail = await uploadFile(req.files.thumbnail[0]);
@@ -71,6 +81,10 @@ app.post(
 );
 
 app.get("/edit-blog", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const blogs = await Blog.find({});
 
   try {
@@ -81,6 +95,10 @@ app.get("/edit-blog", async (req, res) => {
 });
 
 app.get("/edit-blog/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const blog = await Blog.findOne({ _id: req.params.id });
 
   let date = await toJsFormat(blog.date);
@@ -105,6 +123,10 @@ app.post(
     },
   ]),
   async (req, res) => {
+    if (!req.isAuthenticated()) {
+      res.redirect("/admin");
+    }
+
     let reqBody = { ...req.body };
     if (req.files.thumbnail) {
       const blog = await Blog.findById(req.params.id);
@@ -134,6 +156,10 @@ app.post(
 );
 
 app.post("/delete-blog/:id", async (req, res) => {
+  if (!req.isAuthenticated()) {
+    res.redirect("/admin");
+  }
+
   const doc = await Blog.deleteOne({ _id: req.params.id });
 
   try {
