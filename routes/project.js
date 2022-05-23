@@ -202,15 +202,79 @@ app.get("/edit-project/:category/:id", async (req, res) => {
   );
 
   try {
-    res.render("admin/a-project-edit", { project });
+    res.render("admin/a-project-edit", {
+      category: projectCategory.name,
+      project,
+    });
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-app.post("/edit-project/:category/:id", async (req, res) => {
+app.post(
+  "/edit-project/:category/:id",
+  upload.fields([
+    {
+      name: "thumbnail",
+      maxCount: 1,
+    },
+    {
+      name: "mainImg",
+      maxCount: 1,
+    },
+    {
+      name: "imgs",
+      maxCount: 100,
+    },
+  ]),
+  async (req, res) => {
+    const projectCategory = await ProjectCategory.findOne({
+      name: req.params.category,
+    });
+    const projectIndex = await projectCategory.projects.findIndex(
+      (item) => item._id == req.params.id
+    );
 
-});
+    let reqBody = { ...req.body };
+    if (req.files && req.files.thumbnail) {
+      const thumbnail = await uploadFile(req.files.thumbnail[0]);
+      await unlinkFile(req.files.thumbnail[0].path);
+      reqBody = { ...reqBody, thumbnail: thumbnail.Location };
+    }
+    if (req.files && req.files.mainImg) {
+      const mainImg = await uploadFile(req.files.mainImg[0]);
+      await unlinkFile(req.files.mainImg[0].path);
+      reqBody = { ...reqBody, mainImg: mainImg.Location };
+    }
+    if (req.files && req.files.imgs) {
+      let imgs = [];
+      for (let i = 0; i < req.files.imgs.length; i++) {
+        let img = await uploadFile(req.files.imgs[i]);
+        imgs.push(img.Location);
+        await unlinkFile(req.files.imgs[i].path);
+      }
+      reqBody = { ...reqBody, imgs: imgs };
+    }
+
+    let project = projectCategory.projects[projectIndex];
+    projectCategory.projects[projectIndex] = {
+      _id: project._id,
+      thumbnail: project.thumbnail,
+      mainImg: project.mainImg,
+      imgs: project.imgs,
+      featured: project.featured,
+      ...reqBody,
+    };
+
+    await projectCategory.save();
+
+    try {
+      res.redirect("/edit-project");
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  }
+);
 
 app.get("/delete-project/:category/:id", async (req, res) => {
   const projectCategory = await ProjectCategory.findOneAndUpdate(
