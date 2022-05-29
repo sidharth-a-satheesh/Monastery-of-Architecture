@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const express = require("express"),
   app = express();
 
@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/public'));
 
 //route for index page
 app.get("/", function (req, res) {
-  res.render("index");
+  res.render("index");  
 });
 
 app.get("/projects", function (req, res) {
@@ -78,10 +78,9 @@ app.get("/admin/edit-category", function (req, res) {
 //route for magic page
 // app.get("/magic", function (req, res) {
 //   res.render("magic");
-=======
+
 // app.get("/", function (req, res) {
 //   res.render("index");
->>>>>>> 8c7d803e7ca2c0146f993a95e2dd046e31af78e2
 // });
 // app.get("/projects", function (req, res) {
 //     res.render("projects");
@@ -111,8 +110,8 @@ app.get("/admin/edit-category", function (req, res) {
 // // });
 
 require("dotenv").config();
-const express = require("express");
-const app = express();
+// const express = require("express");
+// const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 const mongoose = require("mongoose");
