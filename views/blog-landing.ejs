@@ -23,7 +23,7 @@
   <div>
     <p class="blog-heading">
       <%= blog.title %><br>
-      <font class="blog-date">[<%= blog.date %>] <br><br></font>
+      <font class="blog-date"><%= blog.date.toString().substring(4, 16) %> <br><br></font>
     </p>
   </div>
   <div>
