@@ -22,7 +22,7 @@
     </div>
   </section>
   <section id="section-2">
-    <% for(let i = 0; i < featured.length; i++) { %>
+    <!-- <% for(let i = 0; i < featured.length; i++) { %>
     <div id="section2-1">
       <img id="img-2" src="<%= featured[i].thumbnail %>" alt="">
       <div id="hidden-2">
@@ -32,8 +32,15 @@
         <a href="/featured-project/<%= featured[i]._id %>"><button type="button">VIEW PROJECT</button></a>
       </div>
     </div>
-    <% } %>
-    <!-- <div id="section2-2">
+    <% } %> -->
+    <div id="section2-1">
+        <img id="img-2" src="Projects/THE SECRET GARDEN HOUSE, CALICUT/DSC_2741-1 copy copy.jpg" alt="">
+        <div id="hidden-2">
+            <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
+            <a href=""><button type="button">VIEW PROJECT</button></a>
+        </div>
+    </div>
+    <div id="section2-2">
             <div id="div-img-3">
                 <img id="img-3" src="images/spam/2.jpg" alt="">
                 <div id="hidden-3">
@@ -95,7 +102,7 @@
                 <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
                 <a href=""><button type="button">VIEW PROJECT</button></a>
             </div>
-        </div> -->
+        </div>
   </section>
 </section>
 <%- include ('partials/footer.ejs') %>
