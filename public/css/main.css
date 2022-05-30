@@ -153,7 +153,8 @@ body {
   margin-top: 0;
 }
 #para-1 {
-  font-size: 1.58rem;
+  font-size: 1.48rem;
+  /* font-size: 1.58rem; */
   color: #505050;
   font-weight: 325;
   padding-top: 0;
@@ -162,7 +163,8 @@ body {
   line-height: normal;
 }
 #para-2 {
-  font-size: 1.58rem;
+  font-size: 1.48rem;
+  /* font-size: 1.58rem; */
   color: #505050;
   font-weight: 325;
   margin-bottom: 3%;
