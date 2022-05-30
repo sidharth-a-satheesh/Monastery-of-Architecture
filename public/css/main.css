@@ -611,6 +611,9 @@ button {
   font-size: 1.2rem;
   font-weight: 700;
 }
+.proj-t1 p{
+  margin-bottom: 0;
+}
 .proj-t2 {
   text-align: left;
   font-size: 1.2rem;
