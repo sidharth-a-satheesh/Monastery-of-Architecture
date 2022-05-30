@@ -584,7 +584,7 @@ button{
 
 .proj-imgtitle{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 100%;
     justify-content: space-between;
     padding-top: 3%;
     padding-bottom: 5%;
@@ -597,7 +597,7 @@ button{
     font-weight: 700;
 }
 .proj-t2{
-    text-align: right;
+    text-align: left;
     font-size: 1.3rem;
     font-weight: 400;
 }
