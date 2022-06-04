@@ -212,7 +212,7 @@ body {
   margin-bottom: 5%;
 }
 .pl-section2-4 img {
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 #img-9:hover,
 #img-8:hover,
@@ -666,6 +666,11 @@ button {
 #pl-section2-3 {
   margin-top: 51px;
 }
+.pl-section2-4{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
 #pl-img-2 {
   width: 100%;
   border-radius: 23px;
@@ -680,9 +685,11 @@ button {
   width: 100%;
 }
 #pl-img-9 {
-  width: 100%;
+  max-width: 100%;
+  max-height: 85vh;
   border-radius: 23px;
-  margin-top: 51px;
+  /* margin-top: 51px; */
+  align-items: center;
 }
 .back-to-projects {
   display: grid;
