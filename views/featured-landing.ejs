@@ -25,8 +25,13 @@
 <section id="pl-section-2">
   <secton id="pl-section2-0">
     <div>
-      <p class="p-head"><%= project.name %></p>
-      <p class="p-date-loc"><%= project.location %><br><%= project.startYear %> - <%= project.endYear %></p>
+      <p class="p-head">
+        <%= project.name %>
+      </p>
+      <p class="p-date-loc">
+        <%= project.location %><br>
+        <%= project.timeline %>
+      </p>
     </div>
     <div class="p-landingp">
       <p class="nl">
@@ -50,7 +55,7 @@
       </div>
     </div>
   </div> -->
-  <% for(let i = 0; i < project.imgs.length; i++) { %>
+  <% for(let i=0; i < project.imgs.length; i++) { %>
   <div class="pl-section2-4">
     <img id="pl-img-9" src="<%= project.imgs[i] %>" alt="">
   </div>
