@@ -44,23 +44,28 @@
           <p><%= project.location %></p>
         </div>
       </div>
-      <div class="d-flex float-right mb-5">
-        <div class="add-button-div">
-          <a href="/edit-project/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">EDIT</button></a>
+      <form action="/delete-project/<%= projectCategories[c].name %>/<%= project._id %>" method="post">
+        <input type="text" name="featured" value="<%= project.featured %>" hidden>
+        <input type="text" name="name" value="<%= project.name %>" hidden>
+        <input type="text" name="location" value="<%= project.location %>" hidden>
+        <div class="d-flex float-right mb-5">
+          <div class="add-button-div">
+            <a href="/edit-project/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">EDIT</button></a>
+          </div>
+          <div class="add-button-div">
+            <a href=""><button type="submit" class="btn btn-secondary pl-5 pr-5 mr-2">DELETE</button></a>
+          </div>
+          <% if(project.featured) { %>
+          <div class="add-button-div">
+            <a href="/un-feature/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">UN-FEATURE</button></a>
+          </div>
+          <% } else { %>
+          <div class="add-button-div">
+            <a href="/featured/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">FEATURE</button></a>
+          </div>
+          <% } %>
         </div>
-        <div class="add-button-div">
-          <a href="/delete-project/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5 mr-2">DELETE</button></a>
-        </div>
-        <% if(project.featured) { %>
-        <div class="add-button-div">
-          <a href="/un-feature/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">UN-FEATURE</button></a>
-        </div>
-        <% } else { %>
-        <div class="add-button-div">
-          <a href="/featured/<%= projectCategories[c].name %>/<%= project._id %>"><button type="button" class="btn btn-secondary pl-5 pr-5">FEATURE</button></a>
-        </div>
-        <% } %>
-      </div>
+      </form>
     </div>
     <% } %>
     <% } %>
