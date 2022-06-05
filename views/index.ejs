@@ -14,7 +14,7 @@
 </div>
 </div>
 </header>
-<div class="blank" style="height: 129px;"></div>
+<div class="blank" style="height: 110px;"></div>
 <section class="home-page">
   <section id="section-1">
     <div>
@@ -22,8 +22,7 @@
     </div>
   </section>
   <section id="section-2">
-    <h2 class="mb-5 mt-4" style="text-align: center;">Featured Projects</h2>
-    <% for(let i = 0; i < featured.length; i++) { %>
+    <!-- <% for(let i = 0; i < featured.length; i++) { %>
     <div id="section2-1">
       <img id="img-2" src="<%= featured[i].thumbnail %>" alt="">
       <div id="hidden-2">
@@ -33,10 +32,17 @@
         <a href="/featured-project/<%= featured[i]._id %>"><button type="button">VIEW PROJECT</button></a>
       </div>
     </div>
-    <% } %>
-    <!-- <div id="section2-2">
+    <% } %> -->
+    <div id="section2-1">
+        <img id="img-2" src="Projects/THE SECRET GARDEN HOUSE, CALICUT/DSC_2741-1 copy copy.jpg" alt="">
+        <div id="hidden-2">
+            <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
+            <a href=""><button type="button">VIEW PROJECT</button></a>
+        </div>
+    </div>
+    <div id="section2-2">
             <div id="div-img-3">
-                <img id="img-3" src="images/spam/2.jpg" alt="">
+                <img id="img-3" src="images/3_Photo.jpg" alt="">
                 <div id="hidden-3">
                     <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
                     <a href=""><button type="button">VIEW PROJECT</button></a>
@@ -47,7 +53,7 @@
                     <p id="para-1">We are an interdisciplinary <font style="color: #280095;">team that aspires to craft spaces that address</font> the emerging future of work, leisure and living, and the manner in which we build.</p>
                 </div>
                 <div id="div-img-4">
-                    <img id="img-4" src="images/spam/3.jpg" alt="">
+                    <img id="img-4" src="images/4_Photo.jpg" alt="">
                     <div id="hidden-4">
                         <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
                         <a href=""><button type="button">VIEW PROJECT</button></a>
@@ -67,7 +73,7 @@
         </div>
         <div id="section2-3">
             <div id="div-img-6">
-                <img id="img-6" src="images/spam/4.jpg" alt="">
+                <img id="img-6" src="images/6_Photo.jpg" alt="">
                 <div id="hidden-6">
                     <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
                     <a href=""><button type="button">VIEW PROJECT</button></a>
@@ -75,14 +81,14 @@
             </div>
             <div id="section2-3-1">
                 <div id="div-img-7">
-                    <img id="img-7" src="images/spam/5.jpg" alt="">
+                    <img id="img-7" src="images/7_Photo.jpg" alt="">
                     <div id="hidden-7">
                         <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
                         <a href=""><button type="button">VIEW PROJECT</button></a>
                     </div>
                 </div>
                 <div id="div-img-8">
-                    <img id="img-8" src="images/spam/6.jpg" alt="">
+                    <img id="img-8" src="images/8_Photo.jpg" alt="">
                     <div id="hidden-8">
                         <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
                         <a href=""><button type="button">VIEW PROJECT</button></a>
@@ -96,7 +102,7 @@
                 <div class="img-home-hover"><font>RAKESH RESIDENCE</font><br>RESIDENTIAL</div>
                 <a href=""><button type="button">VIEW PROJECT</button></a>
             </div>
-        </div> -->
+        </div>
   </section>
 </section>
 <%- include ('partials/footer.ejs') %>

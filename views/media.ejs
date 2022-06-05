@@ -14,20 +14,22 @@
 </div>
 </div>
 </header>
-<div class="blank" style="height: 129px;"></div>
-<div class="media-img-temp">
-  <% for (let index = 0; index < media.length; index++) {%>
-  <% const item = media[index]; %>
-  <div class="media-temp">
-    <img src="<%= item.img %>" alt="">
-    <div class="media-logo">
-      <img src="<%= item.logo %>" alt="">
+<div class="blank" style="height: 110px;"></div>
+<div class="media-main">
+  <div class="media-img-temp">
+    <% for (let index = 0; index < media.length; index++) {%>
+    <% const item = media[index]; %>
+    <div class="media-temp">
+      <img src="<%= item.img %>" alt="">
+      <div class="media-logo">
+        <img src="<%= item.logo %>" alt="">
+      </div>
+      <p class="nl"><%- item.content %>
+        <br>
+        <font class="media-date"><%= item.date.toString().substring(4, 16) %></font>
+      </p>
     </div>
-    <p class="nl"><%- item.content %>
-      <br>
-      <font class="media-date"><%= item.date.toString().substring(4, 16) %></font>
-    </p>
+    <% } %>
   </div>
-  <% } %>
 </div>
 <%- include ('partials/footer.ejs') %>

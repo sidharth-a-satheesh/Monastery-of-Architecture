@@ -54,7 +54,7 @@ body {
   cursor: default;
 }
 .navbar-nav {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 350;
   padding-right: 1rem;
 }
@@ -76,9 +76,11 @@ body {
 }
 .nav-head {
   padding-left: 0 !important;
+  margin-left: 2.3rem !important;
 }
 .navbar {
   padding-left: 0.5rem !important;
+  padding: 0 1rem !important;
 }
 .navbar button:focus {
   outline: none;
@@ -111,7 +113,6 @@ body {
   display: grid;
   grid-template-columns: 92%;
   justify-content: center;
-  margin-bottom: 3%;
 }
 #pl-section-2 {
   margin-top: 5%;
@@ -125,8 +126,11 @@ body {
   width: 100%;
   border-radius: 23px;
 }
+#section2-1 {
+    margin-bottom: 5%;
+  }
 #section2-2 {
-  margin-top: 5%;
+  /* margin-top: 5%; */
   display: grid;
   grid-template-columns: 50% 46%;
   margin-bottom: 5%;
@@ -149,7 +153,8 @@ body {
   margin-top: 0;
 }
 #para-1 {
-  font-size: 1.58rem;
+  font-size: 1.48rem;
+  /* font-size: 1.58rem; */
   color: #505050;
   font-weight: 325;
   padding-top: 0;
@@ -158,7 +163,8 @@ body {
   line-height: normal;
 }
 #para-2 {
-  font-size: 1.58rem;
+  font-size: 1.48rem;
+  /* font-size: 1.58rem; */
   color: #505050;
   font-weight: 325;
   margin-bottom: 3%;
@@ -203,9 +209,10 @@ body {
 }
 #section2-4 {
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 .pl-section2-4 img {
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 #img-9:hover,
 #img-8:hover,
@@ -298,7 +305,7 @@ button {
 
 #footer {
   display: grid;
-  grid-template-columns: 95%;
+  grid-template-columns: 92%;
   justify-content: center;
 }
 
@@ -364,13 +371,19 @@ button {
 }
 
 /* Media Page */
+
+.media-main{
+    display: grid;
+    grid-template-columns: 95%;
+    justify-content: center;
+}
 .media-img-temp {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 2%;
   grid-column-gap: 3%;
-  margin: 2% 3%;
-  margin-bottom: 10%;
+  margin: 2%;
+  margin-bottom: 5%;
 }
 .media-img-temp img {
   width: 100%;
@@ -389,7 +402,7 @@ button {
 .media-temp p {
   font-weight: 300;
   color: #505050;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .media-date {
@@ -410,7 +423,7 @@ button {
 }
 .about p {
   text-align: right;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 300;
   line-height: normal;
 }
@@ -432,7 +445,7 @@ button {
 }
 .blog-mainbg {
   display: grid;
-  grid-template-columns: 94%;
+  grid-template-columns: 92%;
   justify-content: center;
 }
 .blog img {
@@ -464,7 +477,7 @@ button {
   font-weight: 300;
 }
 .blog-para {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 300;
   display: flex;
   align-items: center;
@@ -500,7 +513,7 @@ button {
 }
 .contact-main {
   display: grid;
-  grid-template-columns: 90%;
+  grid-template-columns: 92%;
   justify-content: center;
   margin-bottom: 3%;
 }
@@ -535,7 +548,7 @@ button {
   outline: none;
 }
 .contact-para {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 300;
   line-height: normal;
 }
@@ -588,7 +601,7 @@ button {
 
 .proj-imgtitle {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 100%;
   justify-content: space-between;
   padding-top: 3%;
   padding-bottom: 5%;
@@ -597,12 +610,15 @@ button {
 
 .proj-t1 {
   text-align: left;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
+.proj-t1 p{
+  margin-bottom: 0;
+}
 .proj-t2 {
-  text-align: right;
-  font-size: 1.3rem;
+  text-align: left;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 /* .proj-t2 p{
@@ -617,7 +633,7 @@ button {
 .proj-types {
   display: flex;
   margin-bottom: 3%;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 325;
 }
 .proj-types a {
@@ -635,7 +651,7 @@ button {
   margin-bottom: 51px;
 }
 .p-landingp p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 300;
   line-height: normal;
 }
@@ -644,11 +660,16 @@ button {
   font-weight: 400;
 }
 .p-date-loc {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 300;
 }
 #pl-section2-3 {
   margin-top: 51px;
+}
+.pl-section2-4{
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 #pl-img-2 {
   width: 100%;
@@ -664,9 +685,11 @@ button {
   width: 100%;
 }
 #pl-img-9 {
-  width: 100%;
+  max-width: 100%;
+  max-height: 85vh;
   border-radius: 23px;
-  margin-top: 51px;
+  /* margin-top: 51px; */
+  align-items: center;
 }
 .back-to-projects {
   display: grid;
@@ -958,8 +981,7 @@ button {
   .blank {
     height: 120px !important;
   }
-}
-
-.nl {
-  white-space: pre-line;
+  .nav-head {
+    margin-left: 0 !important;
+  }
 }
