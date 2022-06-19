@@ -50,12 +50,14 @@
       </div>
     </div>
   </div> -->
-  <% for(let i = 0; i < project.imgs.length; i++) { %>
-  <div class="pl-section2-4">
-    <img id="pl-img-9" src="<%= project.imgs[i] %>" alt="">
+  <div class="pl-grid">
+    <% for(let i = 0; i < project.imgs.length; i++) { %>
+    <div class="pl-section2-4">
+      <img id="pl-img-9" src="<%= project.imgs[i] %>" alt="">
+    </div>
+    <% } %>
   </div>
-  <% } %>
-  </div>
+  
 </section>
 <div class="back-to-projects">
   <a href="/projects">Back to projects</a>

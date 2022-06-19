@@ -670,6 +670,7 @@ button {
   display: grid;
   align-items: center;
   justify-content: center;
+  margin-bottom: 4rem;
 }
 #pl-img-2 {
   width: 100%;
@@ -691,6 +692,14 @@ button {
   /* margin-top: 51px; */
   align-items: center;
 }
+
+.pl-grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 4rem;
+}
 .back-to-projects {
   display: grid;
   justify-content: center;
@@ -704,7 +713,9 @@ button {
   text-decoration-thickness: 1px;
 }
 
+
 @media only screen and (max-width: 800px) {
+
   .navbar-nav {
     height: 700px;
   }
