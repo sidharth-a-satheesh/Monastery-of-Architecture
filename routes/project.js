@@ -1,5 +1,6 @@
 const express = require("express");
 const { Project, ProjectCategory } = require("../models/project");
+const { Featured } = require("../models/featured");
 const app = express();
 const Auth = require("../auth");
 app.use(Auth);
@@ -322,12 +323,20 @@ app.post(
   }
 );
 
-app.get("/delete-project/:category/:id", async (req, res) => {
+app.post("/delete-project/:category/:id", async (req, res) => {
   if (!req.isAuthenticated()) {
     res.redirect("/admin");
   }
 
-  const projectCategory = await ProjectCategory.findOneAndUpdate(
+  if (req.body.featured === "true") {
+    await Featured.deleteOne({
+      category: req.params.category,
+      name: req.body.name,
+      location: req.body.location,
+    });
+  }
+
+  await ProjectCategory.findOneAndUpdate(
     { name: req.params.category },
     { $pull: { projects: { _id: req.params.id } } }
   );

@@ -10,10 +10,7 @@ const ProjectSchema = new mongoose.Schema({
   location: {
     type: String,
   },
-  startYear: {
-    type: String,
-  },
-  endYear: {
+  timeline: {
     type: String,
   },
   content: {

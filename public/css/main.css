@@ -985,3 +985,7 @@ button {
     margin-left: 0 !important;
   }
 }
+
+.nl {
+  white-space: pre-line;
+}

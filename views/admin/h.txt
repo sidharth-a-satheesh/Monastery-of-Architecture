@@ -1,9 +1,0 @@
-    <!-- <div>
-      <label for="">Category: </label>
-      <select name="category" >
-        <option selected disabled hidden value="">Choose here</option>
-        <% for (let i = 0; i < projectCategories.length; i++) {%>
-        <option value="<%= projectCategories[i].name %>"><%= projectCategories[i].name %></option>
-        <% } %>
-      </select>
-    </div> -->
