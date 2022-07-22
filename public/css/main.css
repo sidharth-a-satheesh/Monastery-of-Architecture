@@ -145,7 +145,7 @@ body {
 }
 #section2-2-1 {
   display: grid;
-  grid-template-rows: 48% 50%;
+  grid-template-rows: auto auto;
 }
 #img-4 {
   width: 100%;
@@ -302,7 +302,10 @@ button {
 #div-img-5 {
   position: relative;
 }
-
+.div-img-4-main{
+  display: flex;
+  flex-direction: column-reverse;
+}
 #footer {
   display: grid;
   grid-template-columns: 92%;
