@@ -586,7 +586,7 @@ button {
 .proj-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   grid-column-gap: 5%;
 }
