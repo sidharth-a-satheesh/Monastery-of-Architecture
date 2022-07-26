@@ -988,7 +988,10 @@ button {
     margin-top: 0;
   }
   .pl-section2-4 {
-    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .pl-grid{
+    grid-template-columns: 100%;  
   }
   .back-to-projects {
     margin-top: 8%;
