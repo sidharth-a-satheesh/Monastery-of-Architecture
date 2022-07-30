@@ -52,11 +52,37 @@
   </div> -->
   <div class="pl-grid">
     <% for(let i = 0; i < project.imgs.length; i++) { %>
-    <div class="pl-section2-4">
-      <img id="pl-img-9" src="<%= project.imgs[i] %>" alt="">
+    <div class="pl-section2-4 container__img-holder">
+      <img id="pl-img-9" src="<%= project.imgs[i] %>" alt="Image">
+    </div>
+    <div class="img-popup">
+      <img src="" alt="Popup Image">
+      <div class="close-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
     <% } %>
   </div>
+
+  
+
+
+  <!-- <div class="container">
+    <div class="container__img-holder">
+      <img src="https://images.pexels.com/photos/589697/pexels-photo-589697.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Image">
+    </div>
+  </div> -->
+  
+  
+
+
+
+
+
+
+
+
   
 </section>
 <div class="back-to-projects">
