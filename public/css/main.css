@@ -1041,6 +1041,7 @@ button {
 
 /* Popup Styling */
 .img-popup {
+  z-index: 10000;
   position: fixed;
   top: 0;
   right: 0;
@@ -1054,7 +1055,7 @@ button {
 }
 
 .img-popup img {
-  max-width: 900px;
+  max-width: 500px;
   width: 100%;
   opacity: 0;
   transform: translateY(-100px);
@@ -1114,7 +1115,7 @@ button {
 @media screen and (max-width: 880px) {
 
   .container__img-holder:nth-child(3n+1) {
-    margin-left: 16px;
+    /* margin-left: 16px; */
   }
 
 }
