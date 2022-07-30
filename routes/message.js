@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   host: "smtp.gmail.com",
   auth: {
-    user: "arshaddanishthana@gmail.com",
-    pass: "123Iamad149@",
+    user: process.env.FROM_EMAIL,
+    pass: process.env.FROM_PASSWORD, 
   },
   secure: true,
 });
@@ -32,7 +32,7 @@ app.get("/messages", async (req, res) => {
 app.post("/messages", async (req, res) => {
   const mailData = {
     from: req.body.email,
-    to: "arshaddanish@ieee.org",
+    to: process.env.TO_EMAIL,
     subject: "Message via MOA Website",
     text: req.body.message,
     // html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer<br/>",
