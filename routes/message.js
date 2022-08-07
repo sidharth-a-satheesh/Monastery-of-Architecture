@@ -7,10 +7,10 @@ app.use(Auth);
 
 const transporter = nodemailer.createTransport({
   port: 465,
-  host: "smtp.gmail.com",
+  host: "smtp.sendgrid.net",
   auth: {
-    user: process.env.FROM_EMAIL,
-    pass: process.env.FROM_PASSWORD, 
+    user: process.env.SENDGRID_USER,
+    pass: process.env.SENDGRID_KEY,
   },
   secure: true,
 });
@@ -31,11 +31,11 @@ app.get("/messages", async (req, res) => {
 
 app.post("/messages", async (req, res) => {
   const mailData = {
-    from: req.body.email,
+    from: process.env.FROM_EMAIL,
     to: process.env.TO_EMAIL,
     subject: "Message via MOA Website",
-    text: req.body.message,
-    // html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer<br/>",
+    //text: req.body.message,
+    html: "<p>From : "+ req.body.name  +" </p><p>Email : "+ req.body.email  +"</p><p>Phone : "+ req.body.phone +"</p><p>Message: <br>" + req.body.message + "</p>",
   };
 
   transporter.sendMail(mailData, function (err, info) {
