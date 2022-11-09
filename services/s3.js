@@ -25,7 +25,7 @@ function uploadFile(file) {
   const uploadParams = {
     Bucket: bucketName,
     Body: fileStream,
-    Key: file.filename,
+    Key: 'moaindia/'+file.filename,
     ACL: 'public-read',
     ContentType: file.mimetype,
     ContentDisposition: 'inline',
